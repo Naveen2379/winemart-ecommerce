@@ -5,7 +5,7 @@ import {Col, Row, Table} from 'react-bootstrap';
 import ComponentSlider from "@kapost/react-component-slider";
 
 import './ShowProducts.css'
-//import ShowAllOrdinaryDrinksNew from "./ShowAllOrdinaryDrinksNew";
+import ShowAllOrdinaryDrinksNew from "./ShowAllOrdinaryDrinksNew";
 
 
 class ShowOrdinaryDrinks extends React.Component {
@@ -16,8 +16,8 @@ class ShowOrdinaryDrinks extends React.Component {
             isLoaded: false,
             listProducts: []
         }
-        const renderLeftArrow = () => <i className="fas fa-angle-left"/>
-        const renderRightArrow = () => <i className="fas fa-angle-right"/>
+        const renderLeftArrow = () => <i className="fa fa-caret-left"/>
+        const renderRightArrow = () => <i className="fa fa-caret-right"/>
 
         this.showProd = this.showProd.bind(this);
         this.showAllOrdinaryDrinks = this.showAllOrdinaryDrinks.bind(this);
@@ -53,8 +53,8 @@ class ShowOrdinaryDrinks extends React.Component {
 
 
     showProd() {
-        return<div>
-            <p>Ordinary Drinks Available <button onClick={() => this.showAllOrdinaryDrinks(this.state.listProducts)}>View All</button></p>
+        return <div>
+            <p>Ordinary Drinks Available <button onClick={this.showAllOrdinaryDrinks}>View All</button></p>
             <ComponentSlider renderLeftArrow={this.renderLeftArrow}
                              renderRightArrow={this.renderRightArrow}>
                 {this.state.listProducts.drinks.map(drink => {
@@ -69,15 +69,15 @@ class ShowOrdinaryDrinks extends React.Component {
 
     showAllOrdinaryDrinks(products) {
         console.log('entered...');
-        return <p>ShowAllOrdinaryDrinksNew</p>
+        return <ShowAllOrdinaryDrinksNew />
     }
 }
 
-function ShowAllOrdinaryDrinksNew() {
+/*function ShowAllOrdinaryDrinksNew() {
     console.log('ShowAllOrdinaryDrinksNew');
     return <p>ShowAllOrdinaryDrinksNew</p>
 
-    /*this.setState({
+    this.setState({
         isLoaded: true,
         listProducts: null
     })
