@@ -1,0 +1,68 @@
+.row1 {
+    width: 100%;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+
+.showProds {
+    width: 1753px;
+}
+
+.prodStyle1 {
+    display: flex;
+    background-color: whitesmoke;
+    overflow: hidden;
+}
+.prodStyle2 {
+    padding-top: 20px;
+    flex: 0 0 15%;
+}
+
+.menu-item {
+    width: 230px;
+    white-space: normal;
+}
+
+.component-slider .caret {
+    width: 40px;
+    height: 70px;
+    background-color: white;
+    border: 2px solid #797979;
+    border-radius: 5px;
+}
+
+.component-slider .slider-container {
+    margin: 0 40px;
+}
+.imgStyle {
+    white-space: normal;
+}
+
+.svgLeft {
+    left: 0;
+    display: flex;
+    position: absolute;
+    cursor: pointer;
+    box-shadow: 1px 2px 10px -1px rgba(0,0,0,.3);
+    background-color: hsla(0,0%,100%,.98);
+    padding: 40px 15px;
+    margin-top: 50px;
+}
+.svgRight {
+    right: 0;
+    display: flex;
+    position: absolute;
+    cursor: pointer;
+    box-shadow: 1px 2px 10px -1px rgba(0,0,0,.3);
+    background-color: hsla(0,0%,100%,.98);
+    padding: 40px 15px;
+    margin-top: 50px;
+}
+
+.svgImg {
+    transform: rotate(180deg);
+}
+.pathRight {
+    fill: #212121;
+}
