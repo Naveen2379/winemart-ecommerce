@@ -2,7 +2,11 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import ShowOrdinaryDrinks from "./ShowOrdinaryDrinks";
-import ShowCocktailDrinks from "./ShowCocktailDrinks";
+import ShowCocktails from "./ShowCocktails";
+import ShowShots from "./ShowShots";
+import ShowCoffeeTea from "./ShowCoffeeTea";
+import ShowBeers from "./ShowBeers";
+import ShowSoftDrinkSoda from "./ShowSoftDrinkSoda";
 
 function App() {
   return (
@@ -14,8 +18,21 @@ function App() {
         <ShowOrdinaryDrinks />
       </div>
     <div className="A300">
-        <ShowCocktailDrinks />
+        <ShowCocktails />
     </div>
+    <div className="A400">
+        <ShowShots />
+    </div>
+    <div className="A500">
+        <ShowCoffeeTea />
+    </div>
+    <div>
+        <ShowBeers />
+    </div>
+    <div>
+        <ShowSoftDrinkSoda />
+    </div>
+
 </div>
 );
 }

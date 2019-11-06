@@ -6,8 +6,9 @@ import ComponentSlider from "@kapost/react-component-slider";
 
 import './ShowProducts.css'
 
+//Filter By Category - Cocktail
 
-class ShowCocktailDrinks extends React.Component {
+class ShowCocktails extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -98,4 +99,4 @@ class ShowCocktailDrinks extends React.Component {
 
 }
 
-export default ShowCocktailDrinks;
+export default ShowCocktails;
