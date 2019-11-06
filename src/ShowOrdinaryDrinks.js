@@ -5,7 +5,7 @@ import {Col, Row, Table} from 'react-bootstrap';
 import ComponentSlider from "@kapost/react-component-slider";
 
 import './ShowProducts.css'
-//import ShowAllOrdinaryDrinksNew from "./ShowAllOrdinaryDrinksNew";
+//import ShowCocktailDrinks from "./ShowCocktailDrinks";
 
 
 class ShowOrdinaryDrinks extends React.Component {
@@ -21,8 +21,6 @@ class ShowOrdinaryDrinks extends React.Component {
         const renderRightArrow = () => <i className="fa fa-caret-right"/>
 
         this.showProd = this.showProd.bind(this);
-        //this.showAllOrdinaryDrinks = this.showAllOrdinaryDrinks.bind(this);
-        //this.showAlOrdDrinks = this.showAlOrdDrinks.bind(this);
     }
 
     componentDidMount() {
@@ -37,8 +35,7 @@ class ShowOrdinaryDrinks extends React.Component {
             .then(result => {console.log(result);
             this.setState({
                 isLoaded: true,
-                listProducts: result,
-                showAllOrdDrinks: false,
+                listProducts: result
                 });
 
             })
@@ -67,10 +64,10 @@ class ShowOrdinaryDrinks extends React.Component {
         </ComponentSlider>
 
 
-        return <div>
-            <p>Ordinary Drinks Available <button onClick={() => this.showAllOrdinaryDrinks(this.state.listProducts)}>View All</button></p>
-            {componentSlider}
-            <div>{this.state.showAllOrdDrinks ?  this.showAlOrdDrinks() : this.state.showAllOrdDrinks}</div>
+        return  <div>
+                <div>{this.state.showAllOrdDrinks ? null : <h4>Ordinary Drinks Available <button key={this.state.listProducts} onClick={this.showAllOrdinaryDrinks.bind(this, this.state.listProducts)}>View All</button></h4> }</div>
+                <div>{this.state.showAllOrdDrinks ? null : componentSlider }</div>
+                <div>{this.state.showAllOrdDrinks ?  this.showAlOrdDrinks() : ''}</div>
         </div>
     }
 
@@ -81,11 +78,13 @@ class ShowOrdinaryDrinks extends React.Component {
             showAllOrdDrinks: true,
             listProducts: allOrdDrink
         })
+
     }
 
     showAlOrdDrinks() {
         console.log(this.state.listProducts);
-        const showDrinks = <div> {this.state.listProducts.drinks.map(drink => {
+        const showDrinks = <div> <h4><button key={this.state.listProducts} onClick={this.goBackToOrdDrinks.bind(this, this.state.listProducts)}>Back</button> All Available Ordinary Drinks</h4>
+            {this.state.listProducts.drinks.map(drink => {
             return <div className="menu-item" key={drink.strDrinkThumb}>
                 <img height="150px" width="150px" src={drink.strDrinkThumb} alt="drinkImage"/>
                 <h5>{drink.strDrink}</h5>
@@ -93,8 +92,15 @@ class ShowOrdinaryDrinks extends React.Component {
         })}</div>
 
         return <div>{showDrinks}</div>
+
     }
 
+    goBackToOrdDrinks(ordDrinks) {
+        this.setState({
+            showAllOrdDrinks: false,
+            listProducts: ordDrinks
+        })
+    }
 
 }
 

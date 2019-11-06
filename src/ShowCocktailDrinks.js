@@ -6,16 +6,17 @@ import ComponentSlider from "@kapost/react-component-slider";
 
 import './ShowProducts.css'
 
-class ShowCocktailDrinks extends React.Component {
 
+class ShowCocktailDrinks extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             isLoaded: false,
-            listProducts: []
+            listProducts: [],
+            showAllCocktailDrinks: false
         }
-        const renderLeftArrow = () => <i className="fas fa-angle-left"/>
-        const renderRightArrow = () => <i className="fas fa-angle-right"/>
+        const renderLeftArrow = () => <i className="fas fa-caret-left"/>
+        const renderRightArrow = () => <i className="fas fa-caret-right"/>
 
         this.showProd = this.showProd.bind(this);
     }
@@ -49,19 +50,52 @@ class ShowCocktailDrinks extends React.Component {
 
 
     showProd() {
+        const componentCocktailSlider = <ComponentSlider renderLeftArrow={this.renderLeftArrow}
+                                                 renderRightArrow={this.renderRightArrow}>
+            {this.state.listProducts.drinks.map(drink => {
+                return <div className="menu-item" key={drink.strDrinkThumb}>
+                    <img height="150px" width="150px" src={drink.strDrinkThumb} alt="drinkImage"/>
+                    <h5>{drink.strDrink}</h5>
+                </div>
+            })}
+        </ComponentSlider>
+
         return <div>
-            <h3>Cocktail Drinks Available</h3>
-            <ComponentSlider renderLeftArrow={this.renderLeftArrow}
-                             renderRightArrow={this.renderRightArrow}>
-                {this.state.listProducts.drinks.map(drink => {
-                    return <div className="menu-item" key={drink.strDrinkThumb}>
-                        <img height="150px" width="150px" src={drink.strDrinkThumb} alt="drinkImage"/>
-                        <h5>{drink.strDrink}</h5>
-                    </div>
-                })}
-            </ComponentSlider>
+            <div>{this.state.showAllCocktailDrinks ? null : <h4>Cocktail Drinks Available <button key={this.state.listProducts} onClick={this.showAllCocktailDrinks.bind(this, this.state.listProducts)}>View All</button></h4> }</div>
+            <div>{this.state.showAllCocktailDrinks ? null : componentCocktailSlider }</div>
+            <div>{this.state.showAllCocktailDrinks ?  this.showAlCocktailDrinks() : ''}</div>
         </div>
     }
+
+    showAllCocktailDrinks(allCocktatilDrink) {
+        console.log(allCocktatilDrink);
+        this.setState({
+            showAllCocktailDrinks: true,
+            listProducts: allCocktatilDrink
+        })
+    }
+
+    showAlCocktailDrinks() {
+        console.log(this.state.listProducts);
+        const showDrinks = <div> <h4><button key={this.state.listProducts} onClick={this.goBackToCocktailDrinks.bind(this, this.state.listProducts)}>Back</button> All Available Cocktail Drinks</h4>
+            {this.state.listProducts.drinks.map(drink => {
+                return <div className="menu-item" key={drink.strDrinkThumb}>
+                    <img height="150px" width="150px" src={drink.strDrinkThumb} alt="drinkImage"/>
+                    <h5>{drink.strDrink}</h5>
+                </div>
+            })}</div>
+
+        return <div>{showDrinks}</div>
+    }
+
+    goBackToCocktailDrinks(cocktailDrinks) {
+        this.setState({
+            showAllCocktailDrinks: false,
+            listProducts: cocktailDrinks
+        })
+    }
+
+
 }
 
 export default ShowCocktailDrinks;
