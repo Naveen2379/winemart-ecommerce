@@ -1,25 +1,31 @@
 import React from "react";
 
 class ShowAllOrdinaryDrinksNew extends React.Component {
-
     constructor(props) {
         super(props);
-       //this.ordinaryDrinks = this.props.ordinaryDrinks;
-        this.state = {
+       this.allOrdinaryDrinks = this.props.allOrdDrinks;
+        /*this.state = {
             isLoaded: false
-        }
+        }*/
     }
 
-    componentDidMount() {
+    /*componentDidMount() {
         this.setState({
             isLoaded: true
         })
-    }
+    }*/
 
     render () {
         console.log('ShowAllOrdinaryDrinksNew')
-        return <div>{!(this.state.isLoaded) ? this.state.isLoaded : 'Naveen'}</div>
+        const showDrinks = <div> {this.state.listProducts.drinks.map(drink => {
+            return <div className="menu-item" key={drink.strDrinkThumb}>
+                <img height="150px" width="150px" src={drink.strDrinkThumb} alt="drinkImage"/>
+                <h5>{drink.strDrink}</h5>
+            </div>
+        })}</div>
+
+        return <div>{showDrinks}</div>
     }
 }
 
-export default ShowAllOrdinaryDrinksNew;
+//export default ShowAllOrdinaryDrinksNew;

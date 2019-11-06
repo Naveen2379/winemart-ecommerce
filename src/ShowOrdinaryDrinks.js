@@ -5,7 +5,7 @@ import {Col, Row, Table} from 'react-bootstrap';
 import ComponentSlider from "@kapost/react-component-slider";
 
 import './ShowProducts.css'
-import ShowAllOrdinaryDrinksNew from "./ShowAllOrdinaryDrinksNew";
+//import ShowAllOrdinaryDrinksNew from "./ShowAllOrdinaryDrinksNew";
 
 
 class ShowOrdinaryDrinks extends React.Component {
@@ -14,13 +14,15 @@ class ShowOrdinaryDrinks extends React.Component {
         super(props);
         this.state = {
             isLoaded: false,
-            listProducts: []
+            listProducts: [],
+            showAllOrdDrinks: false
         }
         const renderLeftArrow = () => <i className="fa fa-caret-left"/>
         const renderRightArrow = () => <i className="fa fa-caret-right"/>
 
         this.showProd = this.showProd.bind(this);
-        this.showAllOrdinaryDrinks = this.showAllOrdinaryDrinks.bind(this);
+        //this.showAllOrdinaryDrinks = this.showAllOrdinaryDrinks.bind(this);
+        //this.showAlOrdDrinks = this.showAlOrdDrinks.bind(this);
     }
 
     componentDidMount() {
@@ -35,7 +37,8 @@ class ShowOrdinaryDrinks extends React.Component {
             .then(result => {console.log(result);
             this.setState({
                 isLoaded: true,
-                listProducts: result
+                listProducts: result,
+                showAllOrdDrinks: false,
                 });
 
             })
@@ -53,42 +56,47 @@ class ShowOrdinaryDrinks extends React.Component {
 
 
     showProd() {
-        return <div>
-            <p>Ordinary Drinks Available <button onClick={this.showAllOrdinaryDrinks}>View All</button></p>
-            <ComponentSlider renderLeftArrow={this.renderLeftArrow}
-                             renderRightArrow={this.renderRightArrow}>
-                {this.state.listProducts.drinks.map(drink => {
-                    return <div className="menu-item" key={drink.strDrinkThumb}>
-                        <img height="150px" width="150px" src={drink.strDrinkThumb} alt="drinkImage"/>
-                        <h5>{drink.strDrink}</h5>
-                    </div>
-                })}
+        const componentSlider = <ComponentSlider renderLeftArrow={this.renderLeftArrow}
+                                                 renderRightArrow={this.renderRightArrow}>
+            {this.state.listProducts.drinks.map(drink => {
+                return <div className="menu-item" key={drink.strDrinkThumb}>
+                    <img height="150px" width="150px" src={drink.strDrinkThumb} alt="drinkImage"/>
+                    <h5>{drink.strDrink}</h5>
+                </div>
+            })}
         </ComponentSlider>
+
+
+        return <div>
+            <p>Ordinary Drinks Available <button onClick={() => this.showAllOrdinaryDrinks(this.state.listProducts)}>View All</button></p>
+            {componentSlider}
+            <div>{this.state.showAllOrdDrinks ?  this.showAlOrdDrinks() : this.state.showAllOrdDrinks}</div>
         </div>
     }
 
-    showAllOrdinaryDrinks(products) {
+    showAllOrdinaryDrinks(allOrdDrink) {
         console.log('entered...');
-        return <ShowAllOrdinaryDrinksNew />
+        console.log(allOrdDrink);
+        this.setState({
+            showAllOrdDrinks: true,
+            listProducts: allOrdDrink
+        })
     }
+
+    showAlOrdDrinks() {
+        console.log(this.state.listProducts);
+        const showDrinks = <div> {this.state.listProducts.drinks.map(drink => {
+            return <div className="menu-item" key={drink.strDrinkThumb}>
+                <img height="150px" width="150px" src={drink.strDrinkThumb} alt="drinkImage"/>
+                <h5>{drink.strDrink}</h5>
+            </div>
+        })}</div>
+
+        return <div>{showDrinks}</div>
+    }
+
+
 }
-
-/*function ShowAllOrdinaryDrinksNew() {
-    console.log('ShowAllOrdinaryDrinksNew');
-    return <p>ShowAllOrdinaryDrinksNew</p>
-
-    this.setState({
-        isLoaded: true,
-        listProducts: null
-    })
-    return <div>{this.state.listProducts.drinks.map(drink => {
-        return <div className="menu-item" key={drink.strDrinkThumb}>
-            <img height="150px" width="150px" src={drink.strDrinkThumb} alt="drinkImage"/>
-            <h5>{drink.strDrink}</h5>
-        </div>
-    })}</div>*/
-}
-
 
 
 export default ShowOrdinaryDrinks;
