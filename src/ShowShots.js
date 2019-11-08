@@ -58,8 +58,8 @@ class ShowShots extends React.Component {
 
 
         return  <div>
-            <div>{this.state.showAllShots ? null : <h4>Shots Available <button key={this.state.listProducts} onClick={this.showAllShots.bind(this, this.state.listProducts)}>View All</button></h4> }</div>
-            <div>{this.state.showAllShots ? null : componentSlider }</div>
+            <div>{this.state.showAllShots ? '' : <h4>Shots Available <button key={this.state.listProducts} onClick={this.showAllShots.bind(this, this.state.listProducts)}>View All</button></h4> }</div>
+            <div>{this.state.showAllShots ? '' : componentSlider }</div>
             <div>{this.state.showAllShots ?  this.showAlShots() : ''}</div>
         </div>
     }
@@ -69,13 +69,17 @@ class ShowShots extends React.Component {
         console.log(allShots);
         this.setState({
             showAllShots: true,
-            listProducts: allShots
-        })
+            listProducts: allShots,
+            show: true
+        });
+
+        this.props.isShowing();
 
     }
 
     showAlShots() {
         console.log(this.state.listProducts);
+        console.log(this.state.show);
         const showDrinks = <div> <h4><button key={this.state.listProducts} onClick={this.goBackToOrdDrinks.bind(this, this.state.listProducts)}>Back</button> All Available Shots</h4>
             {this.state.listProducts.drinks.map(drink => {
                 return <div className="menu-item" key={drink.strDrinkThumb}>

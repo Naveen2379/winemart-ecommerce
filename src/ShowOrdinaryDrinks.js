@@ -15,7 +15,9 @@ class ShowOrdinaryDrinks extends React.Component {
         this.state = {
             isLoaded: false,
             listProducts: [],
-            showAllOrdDrinks: false
+            showAllOrdDrinks: false,
+            isShowingOrdDrink: this.props.isShowing,
+            isShowingCocktail: this.props.isShowing
         }
         const renderLeftArrow = () => <i className="fa fa-caret-left"/>
         const renderRightArrow = () => <i className="fa fa-caret-right"/>
@@ -65,24 +67,23 @@ class ShowOrdinaryDrinks extends React.Component {
 
 
         return  <div>
-                <div>{this.state.showAllOrdDrinks ? null : <h4>Ordinary Drinks Available <button key={this.state.listProducts} onClick={this.showAllOrdinaryDrinks.bind(this, this.state.listProducts)}>View All</button></h4> }</div>
-                <div>{this.state.showAllOrdDrinks ? null : componentSlider }</div>
+                <div>{this.state.showAllOrdDrinks ? '' : <h4>Ordinary Drinks Available <button key={this.state.listProducts} onClick={this.showAllOrdinaryDrinks.bind(this, this.state.listProducts)}>View All</button></h4> }</div>
+                <div>{this.state.showAllOrdDrinks ? '' : componentSlider }</div>
                 <div>{this.state.showAllOrdDrinks ?  this.showAlOrdDrinks() : ''}</div>
         </div>
     }
 
     showAllOrdinaryDrinks(allOrdDrink) {
-        console.log('entered...');
         console.log(allOrdDrink);
         this.setState({
             showAllOrdDrinks: true,
             listProducts: allOrdDrink
-        })
+        });
 
+        this.props.isShowing();
     }
 
     showAlOrdDrinks() {
-        console.log(this.state.listProducts);
         const showDrinks = <div> <h4><button key={this.state.listProducts} onClick={this.goBackToOrdDrinks.bind(this, this.state.listProducts)}>Back</button> All Available Ordinary Drinks</h4>
             {this.state.listProducts.drinks.map(drink => {
             return <div className="menu-item" key={drink.strDrinkThumb}>
@@ -92,7 +93,6 @@ class ShowOrdinaryDrinks extends React.Component {
         })}</div>
 
         return <div>{showDrinks}</div>
-
     }
 
     goBackToOrdDrinks(ordDrinks) {
@@ -101,6 +101,7 @@ class ShowOrdinaryDrinks extends React.Component {
             listProducts: ordDrinks
         })
     }
+
 
 }
 

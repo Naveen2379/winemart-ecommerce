@@ -62,8 +62,8 @@ class ShowCocktails extends React.Component {
         </ComponentSlider>
 
         return <div>
-            <div>{this.state.showAllCocktailDrinks ? null : <h4>Cocktail Drinks Available <button key={this.state.listProducts} onClick={this.showAllCocktailDrinks.bind(this, this.state.listProducts)}>View All</button></h4> }</div>
-            <div>{this.state.showAllCocktailDrinks ? null : componentCocktailSlider }</div>
+            <div>{this.state.showAllCocktailDrinks ? '' : <h4>Cocktail Drinks Available <button key={this.state.listProducts} onClick={this.showAllCocktailDrinks.bind(this, this.state.listProducts)}>View All</button></h4> }</div>
+            <div>{this.state.showAllCocktailDrinks ? '' : componentCocktailSlider }</div>
             <div>{this.state.showAllCocktailDrinks ?  this.showAlCocktailDrinks() : ''}</div>
         </div>
     }
@@ -72,12 +72,17 @@ class ShowCocktails extends React.Component {
         console.log(allCocktatilDrink);
         this.setState({
             showAllCocktailDrinks: true,
-            listProducts: allCocktatilDrink
-        })
+            listProducts: allCocktatilDrink,
+            show: true
+        });
+
+        this.props.isShowing();
+
     }
 
     showAlCocktailDrinks() {
         console.log(this.state.listProducts);
+        console.log(this.state.show);
         const showDrinks = <div> <h4><button key={this.state.listProducts} onClick={this.goBackToCocktailDrinks.bind(this, this.state.listProducts)}>Back</button> All Available Cocktail Drinks</h4>
             {this.state.listProducts.drinks.map(drink => {
                 return <div className="menu-item" key={drink.strDrinkThumb}>
@@ -93,7 +98,9 @@ class ShowCocktails extends React.Component {
         this.setState({
             showAllCocktailDrinks: false,
             listProducts: cocktailDrinks
-        })
+        });
+
+
     }
 
 
