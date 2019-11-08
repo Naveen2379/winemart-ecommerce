@@ -94,7 +94,8 @@ class ShowBeers extends React.Component {
         this.setState({
             showAllBeers: false,
             listProducts: beers
-        })
+        });
+        this.props.showHomePage();
     }
 }
 

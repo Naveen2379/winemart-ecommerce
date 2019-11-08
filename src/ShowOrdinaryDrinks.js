@@ -99,7 +99,9 @@ class ShowOrdinaryDrinks extends React.Component {
         this.setState({
             showAllOrdDrinks: false,
             listProducts: ordDrinks
-        })
+        });
+
+        this.props.showHomePage();
     }
 
 

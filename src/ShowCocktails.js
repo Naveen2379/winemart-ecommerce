@@ -100,7 +100,7 @@ class ShowCocktails extends React.Component {
             listProducts: cocktailDrinks
         });
 
-
+        this.props.showHomePage();
     }
 
 

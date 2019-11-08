@@ -96,7 +96,9 @@ class ShowShots extends React.Component {
         this.setState({
             showAllShots: false,
             listProducts: shots
-        })
+        });
+
+        this.props.showHomePage();
     }
 }
 

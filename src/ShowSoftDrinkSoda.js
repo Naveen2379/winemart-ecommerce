@@ -95,7 +95,9 @@ class ShowSoftDrinkSoda extends React.Component {
         this.setState({
             showAllSoftDrinkSodas: false,
             listProducts: softdrinkSodas
-        })
+        });
+
+        this.props.showHomePage();
     }
 }
 

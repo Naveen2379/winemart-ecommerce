@@ -96,7 +96,9 @@ class ShowCoffeeTea extends React.Component {
         this.setState({
             showAllCoffeeTeas: false,
             listProducts: coffeeTeas
-        })
+        });
+
+        this.props.showHomePage();
     }
 }
 
