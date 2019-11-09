@@ -9,6 +9,7 @@ import ShowShots from "./ShowShots";
 import ShowCoffeeTea from "./ShowCoffeeTea";
 import ShowBeers from "./ShowBeers";
 import ShowSoftDrinkSoda from "./ShowSoftDrinkSoda";
+import AlcoholOrNonAlcohol from "./AlcoholorNonAlcohol";
 
 class Homepage extends React.Component {
     constructor(props) {
@@ -40,6 +41,7 @@ class Homepage extends React.Component {
             <Row className="A200">
                 <Col className="filterSideBar" sm={2}>
                     <p>Filter</p>
+                    <AlcoholOrNonAlcohol />
                 </Col>
                 <Col className="componentsStyle" sm={10}>
                     <div className="A2100">

@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "bootstrap-switch-button-react": "^1.1.0",
     "lodash": "latest",
     "react": "^16.11.0",
     "react-bootstrap": "latest",
@@ -33,6 +34,7 @@
     ]
   },
   "devDependencies": {
-    "@kapost/react-component-slider": "^1.0.5"
+    "@kapost/react-component-slider": "^1.0.5",
+    "react-bootstrap-toggle": "^2.3.2"
   }
 }

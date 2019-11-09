@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4385e495-3ec3-41ff-8765-5c9992b76ca4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/HomePage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AlcoholOrNonAlcohol.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AlcoholorNonAlcohol.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/switch.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HomePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/HomePage.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Homepage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Homepage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ShowAllOrdinaryDrinksNew.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ShowProducts.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShowProducts.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -75,7 +75,9 @@
       <workItem from="1572927579082" duration="16396000" />
       <workItem from="1572964043910" duration="32221000" />
       <workItem from="1573102920247" duration="4774000" />
-      <workItem from="1573182810554" duration="22759000" />
+      <workItem from="1573182810554" duration="28531000" />
+      <workItem from="1573289135229" duration="9458000" />
+      <workItem from="1573306492022" duration="2974000" />
     </task>
     <servers />
   </component>
