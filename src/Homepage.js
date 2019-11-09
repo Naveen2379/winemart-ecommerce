@@ -1,4 +1,8 @@
 import React from "react";
+import  {Container, Row, Col} from 'react-grid-system'
+
+import './HomePage.css';
+
 import ShowOrdinaryDrinks from "./ShowOrdinaryDrinks";
 import ShowCocktails from "./ShowCocktails";
 import ShowShots from "./ShowShots";
@@ -29,37 +33,42 @@ class Homepage extends React.Component {
     }
 
     homePageInitial() {
-        const homePage = <div>
-            <div className="A100">
+        const homePage = <Container className="containerStyle">
+            <Row className="A100">
                 <h3 className="header1">Cocktail WineMart</h3>
-            </div>
-            <div className="A200">
-                {this.state.isShowingOrdDrink ? '' : <ShowOrdinaryDrinks isShowing={this.showingOrdDrink} showHomePage={this.showingHomePage} />}
-            </div>
-            <div className="A300">
-                {this.state.isShowingCocktail ? '' : <ShowCocktails isShowing={this.showingCocktail} showHomePage={this.showingHomePage}/>}
-            </div>
-            <div className="A400">
-                {this.state.isShowingShots ? '' : <ShowShots isShowing={this.showingShots} showHomePage={this.showingHomePage} />}
-            </div>
-            <div className="A500">
-                {this.state.isShowingCoffeeTeas ? '' : <ShowCoffeeTea isShowing={this.showingCoffeeTeas} showHomePage={this.showingHomePage} />}
-            </div>
-            <div className="A600">
-                {this.state.isShowingBeers ? '' : <ShowBeers isShowing={this.showingBeers} showHomePage={this.showingHomePage} />}
-            </div>
-            <div className="A700">
-                {this.state.isShowingSoftDrinkSoda ? '' : <ShowSoftDrinkSoda isShowing={this.showingSoftDrinkSoda} showHomePage={this.showingHomePage} />}
-            </div>
-        </div>;
+            </Row>
+            <Row className="A200">
+                <Col className="filterSideBar" sm={2}>
+                    <p>Filter</p>
+                </Col>
+                <Col className="componentsStyle" sm={10}>
+                    <div className="A2100">
+                        {this.state.isShowingOrdDrink ? '' : <ShowOrdinaryDrinks isShowing={this.showingOrdDrink} showHomePage={this.showingHomePage} />}
+                    </div>
+                    <div className="A2200">
+                        {this.state.isShowingCocktail ? '' : <ShowCocktails isShowing={this.showingCocktail} showHomePage={this.showingHomePage}/>}
+                    </div>
+                    <div className="A2300">
+                        {this.state.isShowingShots ? '' : <ShowShots isShowing={this.showingShots} showHomePage={this.showingHomePage} />}
+                    </div>
+                    <div className="A2400">
+                        {this.state.isShowingCoffeeTeas ? '' : <ShowCoffeeTea isShowing={this.showingCoffeeTeas} showHomePage={this.showingHomePage} />}
+                    </div>
+                    <div className="A2500">
+                        {this.state.isShowingBeers ? '' : <ShowBeers isShowing={this.showingBeers} showHomePage={this.showingHomePage} />}
+                    </div>
+                    <div className="A2600">
+                        {this.state.isShowingSoftDrinkSoda ? '' : <ShowSoftDrinkSoda isShowing={this.showingSoftDrinkSoda} showHomePage={this.showingHomePage} />}
+                    </div>
+                </Col>
+            </Row>
+        </Container>
 
         return <div>{homePage}</div>
     }
 
     render() {
-        return <div>
-            {this.state.showHomepage ? '' : this.homePageInitial()}
-        </div>
+        return <div>{this.state.showHomepage ? '' : this.homePageInitial()}</div>
     }
 
     showingHomePage() {

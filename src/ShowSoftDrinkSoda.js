@@ -58,7 +58,7 @@ class ShowSoftDrinkSoda extends React.Component {
 
 
         return  <div>
-            <div>{this.state.showAllSoftDrinkSodas ? '' : <h4>Soft Drink Sodas Available <button key={this.state.listProducts} onClick={this.showAllSoftDrinkSodas.bind(this, this.state.listProducts)}>View All</button></h4> }</div>
+            <div>{this.state.showAllSoftDrinkSodas ? '' : <h4 className="h4Style">Soft Drink Sodas Available <button key={this.state.listProducts} onClick={this.showAllSoftDrinkSodas.bind(this, this.state.listProducts)}>View All</button></h4> }</div>
             <div>{this.state.showAllSoftDrinkSodas ? '' : componentSlider }</div>
             <div>{this.state.showAllSoftDrinkSodas ?  this.showAlSoftdrinkSodas() : ''}</div>
         </div>
@@ -79,7 +79,7 @@ class ShowSoftDrinkSoda extends React.Component {
     showAlSoftdrinkSodas() {
         console.log(this.state.listProducts);
         console.log(this.state.show);
-        const showDrinks = <div> <h4><button key={this.state.listProducts} onClick={this.goBackToSoftDrinkSodas.bind(this, this.state.listProducts)}>Back</button> All Available Soft Drink Sodas</h4>
+        const showDrinks = <div> <h4 className="h4Style"><button key={this.state.listProducts} onClick={this.goBackToSoftDrinkSodas.bind(this, this.state.listProducts)}>Back</button> All Available Soft Drink Sodas</h4>
             {this.state.listProducts.drinks.map(drink => {
                 return <div className="menu-item" key={drink.strDrinkThumb}>
                     <img height="150px" width="150px" src={drink.strDrinkThumb} alt="drinkImage"/>

@@ -1,0 +1,17 @@
+.containerStyle {
+    min-width: 1841px;
+}
+
+.filterSideBar {
+    max-height: 500px !important;
+    border: 2px solid red;
+    margin-top: 10px;
+}
+
+.componentsStyle {
+
+}
+
+.h4Style {
+    padding: 10px 0px;
+}
