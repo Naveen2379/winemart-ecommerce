@@ -68,7 +68,9 @@ class AlcoholOrNonAlcohol extends React.Component {
 
     showAlcoholicDrinks() {
         console.log('showAlcoholicDrinks');
-        console.log(this.state.isChecked);
+        //console.log(this.state.isChecked);
+        console.log('showAlcDrinks": ' +this.state.showAlcDrinks);
+        console.log('showNonAlcDrinks: ' + this.state.showNonAlcDrinks);
         //https://the-cocktail-db.p.rapidapi.com/filter.php?a=Alcoholic
             fetch("https://the-cocktail-db.p.rapidapi.com/filter.php?a=Alcoholic", {
                 "method": "GET",
@@ -94,7 +96,9 @@ class AlcoholOrNonAlcohol extends React.Component {
 
     showNonAlcoholicDrinks() {
         console.log('showNonAlcoholicDrinks');
-        console.log(this.state.isChecked);
+        //console.log(this.state.isChecked);
+        console.log('showAlcDrinks: ' +this.state.showAlcDrinks);
+        console.log('showNonAlcDrinks: ' + this.state.showNonAlcDrinks);
         //https://the-cocktail-db.p.rapidapi.com/filter.php?a=Non%20Alcoholic
             fetch("https://the-cocktail-db.p.rapidapi.com/filter.php?a=Non%20Alcoholic", {
                 "method": "GET",
@@ -107,8 +111,9 @@ class AlcoholOrNonAlcohol extends React.Component {
                 .then(result => {console.log(result);
                     this.setState({
                         isLoaded: true,
+                        isChecked: false,
                         listProducts: result,
-                        showNonAlcDrinks: false
+                        showNonAlcDrinks: true
                     });
 
                 })
