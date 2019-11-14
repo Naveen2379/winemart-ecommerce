@@ -2,14 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4385e495-3ec3-41ff-8765-5c9992b76ca4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/AlcoholOrNonAlcohol.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AlcoholorNonAlcohol.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/switch.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AlcNonAlcMixed.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AlcoholicDrinks.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AlcoholicDrinks1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/NonAlcoholicDrinks.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/RouteToAlcohol.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ShowingMixedDrinks.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AlcoholOrNonAlcohol.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/AlcoholOrNonAlcohol.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AlcoholorNonAlcohol.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/AlcoholorNonAlcohol.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/HomePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/HomePage.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Homepage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Homepage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ShowBeers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShowBeers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ShowCocktails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShowCocktails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ShowCoffeeTea.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShowCoffeeTea.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ShowOrdinaryDrinks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShowOrdinaryDrinks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ShowProducts.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShowProducts.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ShowShots.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShowShots.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ShowSoftDrinkSoda.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShowSoftDrinkSoda.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/switch.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/switch.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,6 +53,7 @@
   </component>
   <component name="ProjectId" id="1Sxu0RFrGhctze1IxQksRmqudTo" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -77,7 +95,11 @@
       <workItem from="1573102920247" duration="4774000" />
       <workItem from="1573182810554" duration="28531000" />
       <workItem from="1573289135229" duration="9458000" />
-      <workItem from="1573306492022" duration="2974000" />
+      <workItem from="1573306492022" duration="19580000" />
+      <workItem from="1573451938772" duration="26699000" />
+      <workItem from="1573540264130" duration="104000" />
+      <workItem from="1573558590853" duration="19995000" />
+      <workItem from="1573704039794" duration="29344000" />
     </task>
     <servers />
   </component>

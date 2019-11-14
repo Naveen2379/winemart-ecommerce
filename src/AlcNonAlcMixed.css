@@ -1,0 +1,50 @@
+.showAlcStyle {
+    padding-top: 200px;
+}
+
+.formStyle {
+    padding-top: 50px;
+}
+
+.nav-tabs {
+    font-size: 25px;
+    text-align: left;
+    width: 100%;
+    padding-top: 3px;
+}
+
+.tabsStyle {
+    margin-left: 15px;
+}
+
+.nav {
+    margin-left: 25px;
+}
+
+.fade {
+    opacity: inherit;
+}
+
+.nav-item {
+    margin-right: 20px;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    padding-right: 10px;
+    padding-top: 2px;
+}
+
+.myClass :hover {
+    background-color: red !important;
+    color: white !important;
+}
+
+.eachTabStyle nav-item nav-link :active{
+    background-color: black;
+}
+
+/* Active tab */
+.myClass :active {
+    background-color: blue !important;
+    color: white !important;
+}

@@ -5,13 +5,71 @@
 .filterSideBar {
     max-height: 500px !important;
     border: 2px solid red;
-    margin-top: 25px;
+    margin-top: 22px;
 }
 
 .componentsStyle {
 
 }
 
+/*.header1 {
+    min-height: 100px;
+}*/
 .h4Style {
     padding: 10px 0px;
+}
+
+.showDrinks {
+    padding-top: 100px;
+}
+
+.A200 {
+    min-height: 200px;
+    background-color: transparent;
+    padding-top: 100px;
+    align-items: center;
+    margin-left: 0px;
+}
+
+.A100 {
+    min-height: 100px;
+    min-width: 1853px;
+    color: white;
+    font-size: large;
+    position: fixed;
+    z-index: 1;
+    background-color: blue;
+}
+
+.A300 {
+    flex-wrap: nowrap !important;
+}
+.A3100 {
+    margin: 1px 0px;
+    background-color: white;
+}
+
+.A3200 {
+    margin: 1px 0px;
+    background-color: white;
+}
+
+.A3300 {
+    margin: 1px 0px;
+    background-color: white;
+}
+
+.A3400 {
+    margin: 1px 0px;
+    background-color: white;
+}
+
+.A3500 {
+    margin: 1px 0px;
+    background-color: white;
+}
+
+.A3600 {
+    margin: 1px 0px;
+    background-color: white;
 }

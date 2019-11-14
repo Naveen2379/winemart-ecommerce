@@ -9,12 +9,8 @@ import ShowShots from "./ShowShots";
 import ShowCoffeeTea from "./ShowCoffeeTea";
 import ShowBeers from "./ShowBeers";
 import ShowSoftDrinkSoda from "./ShowSoftDrinkSoda";
-import AlcoholOrNonAlcohol from "./AlcoholorNonAlcohol";
-import RouteToAlcohol from './RouteToAlcohol';
-import AlcoholicDrinks from "./AlcoholicDrinks";
-import {Tab, Tabs} from "react-bootstrap";
 
-class Homepage extends React.Component {
+class ShowingMixedDrinks extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -36,19 +32,11 @@ class Homepage extends React.Component {
         this.showingSoftDrinkSoda = this.showingSoftDrinkSoda.bind(this);
         this.showingHomePage = this.showingHomePage.bind(this);
         this.homePageInitial = this.homePageInitial.bind(this);
-        this.showAlcOrNonAlc = this.showAlcOrNonAlc.bind(this);
     }
 
     homePageInitial() {
         const homePage = <Container className="containerStyle">
-            <Row className="A100">
-                <h3 className="header1">Cocktail WineMart</h3>
-            </Row>
-            <Row className="A200">
-                <AlcoholicDrinks />
-            </Row>
             <Row className="A300">
-                <Col className="filterSideBar" sm={2}>{this.state.isShowingFilter ? '' :  <p>Filter</p>}</Col>
                 <Col className="componentsStyle" sm={10}>
                     <div className="A3100">
                         {this.state.isShowingOrdDrink ? '' : <ShowOrdinaryDrinks isShowing={this.showingOrdDrink} showHomePage={this.showingHomePage} />}
@@ -79,23 +67,6 @@ class Homepage extends React.Component {
         return <div>{this.state.showHomepage ? '' : this.homePageInitial()}</div>
     }
 
-
-    showAlcOrNonAlc() {
-        console.log('show homepage');
-        console.log(this.state.isShowingOrdDrink);
-        this.setState({
-            isShowingAlcNonAlc: false,
-            isShowingOrdDrink: true,
-            isShowingCocktail: true,
-            isShowingShots: true,
-            isShowingCoffeeTeas: true,
-            isShowingBeers: true,
-            isShowingSoftDrinkSoda: true,
-            isShowingFilter: true
-        });
-        console.log(this.state.isShowingOrdDrink);
-    }
-
     showingHomePage() {
         this.setState({
             showHomepage: false,
@@ -109,7 +80,6 @@ class Homepage extends React.Component {
     }
 
     showingOrdDrink() {
-        console.log('homepage showing ordinary drinks');
         this.setState({
             isShowingOrdDrink: false,
             isShowingCocktail: true,
@@ -119,7 +89,6 @@ class Homepage extends React.Component {
             isShowingSoftDrinkSoda: true
 
         });
-        console.log('shown homepage');
     }
 
     showingCocktail() {
@@ -185,4 +154,4 @@ class Homepage extends React.Component {
 
 
 
-export default Homepage;
+export default ShowingMixedDrinks;

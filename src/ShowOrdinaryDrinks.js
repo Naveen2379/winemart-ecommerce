@@ -61,6 +61,7 @@ class ShowOrdinaryDrinks extends React.Component {
                 return <div className="menu-item" key={drink.strDrinkThumb}>
                     <img height="150px" width="150px" src={drink.strDrinkThumb} alt="drinkImage"/>
                     <h5>{drink.strDrink}</h5>
+                    <h6>Cost: ₹599/-</h6>
                 </div>
             })}
         </ComponentSlider>
@@ -74,7 +75,6 @@ class ShowOrdinaryDrinks extends React.Component {
     }
 
     showAllOrdinaryDrinks(allOrdDrink) {
-        console.log(allOrdDrink);
         this.setState({
             showAllOrdDrinks: true,
             listProducts: allOrdDrink
@@ -89,6 +89,7 @@ class ShowOrdinaryDrinks extends React.Component {
             return <div className="menu-item" key={drink.strDrinkThumb}>
                 <img height="150px" width="150px" src={drink.strDrinkThumb} alt="drinkImage"/>
                 <h5>{drink.strDrink}</h5>
+                <h6>Cost: ₹599/-</h6>
             </div>
         })}</div>
 

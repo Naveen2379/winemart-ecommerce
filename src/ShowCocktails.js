@@ -7,7 +7,6 @@ import ComponentSlider from "@kapost/react-component-slider";
 import './ShowProducts.css'
 
 //Filter By Category - Cocktail
-
 class ShowCocktails extends React.Component {
     constructor(props) {
         super(props);
@@ -69,7 +68,6 @@ class ShowCocktails extends React.Component {
     }
 
     showAllCocktailDrinks(allCocktatilDrink) {
-        console.log(allCocktatilDrink);
         this.setState({
             showAllCocktailDrinks: true,
             listProducts: allCocktatilDrink,
@@ -81,8 +79,6 @@ class ShowCocktails extends React.Component {
     }
 
     showAlCocktailDrinks() {
-        console.log(this.state.listProducts);
-        console.log(this.state.show);
         const showDrinks = <div> <h4 className="h4Style"><button key={this.state.listProducts} onClick={this.goBackToCocktailDrinks.bind(this, this.state.listProducts)}>Back</button> All Available Cocktail Drinks</h4>
             {this.state.listProducts.drinks.map(drink => {
                 return <div className="menu-item" key={drink.strDrinkThumb}>

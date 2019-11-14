@@ -24,12 +24,6 @@
     white-space: normal;
 }
 
-.menu-item:hover {
-    background-color: aliceblue;
-    height: 190px;
-    color: black;
-}
-
 .component-slider .caret {
     width: 50px;
     height: 90px;

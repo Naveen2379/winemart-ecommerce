@@ -65,7 +65,6 @@ class ShowCoffeeTea extends React.Component {
     }
 
     showAllCoffeeTeas(allCoffeeTeas) {
-        console.log(allCoffeeTeas);
         this.setState({
             showAllCoffeeTeas: true,
             listProducts: allCoffeeTeas
@@ -78,8 +77,6 @@ class ShowCoffeeTea extends React.Component {
     }
 
     showAlCoffeeTeas() {
-        console.log(this.state.listProducts);
-        console.log(this.state.show);
         const showDrinks = <div> <h4 className="h4Style"><button key={this.state.listProducts} onClick={this.goBackToCoffeeTeas.bind(this, this.state.listProducts)}>Back</button> All Available Coffee/Tea</h4>
             {this.state.listProducts.drinks.map(drink => {
                 return <div className="menu-item" key={drink.strDrinkThumb}>

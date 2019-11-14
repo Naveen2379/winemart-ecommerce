@@ -9,7 +9,7 @@ class ShowSoftDrinkSoda extends React.Component {
             isLoaded: false,
             listProducts: [],
             showAllSoftDrinkSodas: false
-        }
+        };
         const renderLeftArrow = () => <i className="fa fa-caret-left"/>
         const renderRightArrow = () => <i className="fa fa-caret-right"/>
 
@@ -25,7 +25,7 @@ class ShowSoftDrinkSoda extends React.Component {
             }
         })
             .then(response => response.json())
-            .then(result => {console.log(result);
+            .then(result => {//console.log(result);
                 this.setState({
                     isLoaded: true,
                     listProducts: result
@@ -60,12 +60,11 @@ class ShowSoftDrinkSoda extends React.Component {
         return  <div>
             <div>{this.state.showAllSoftDrinkSodas ? '' : <h4 className="h4Style">Soft Drink Sodas Available <button key={this.state.listProducts} onClick={this.showAllSoftDrinkSodas.bind(this, this.state.listProducts)}>View All</button></h4> }</div>
             <div>{this.state.showAllSoftDrinkSodas ? '' : componentSlider }</div>
-            <div>{this.state.showAllSoftDrinkSodas ?  this.showAlSoftdrinkSodas() : ''}</div>
+            <div>{this.state.showAllSoftDrinkSodas ?  this.showAlSoftDrinkSodas() : ''}</div>
         </div>
     }
 
     showAllSoftDrinkSodas(allsoftdrinkSodas) {
-        console.log(allsoftdrinkSodas);
         this.setState({
             showAllSoftDrinkSodas: true,
             listProducts: allsoftdrinkSodas,
@@ -76,9 +75,7 @@ class ShowSoftDrinkSoda extends React.Component {
 
     }
 
-    showAlSoftdrinkSodas() {
-        console.log(this.state.listProducts);
-        console.log(this.state.show);
+    showAlSoftDrinkSodas() {
         const showDrinks = <div> <h4 className="h4Style"><button key={this.state.listProducts} onClick={this.goBackToSoftDrinkSodas.bind(this, this.state.listProducts)}>Back</button> All Available Soft Drink Sodas</h4>
             {this.state.listProducts.drinks.map(drink => {
                 return <div className="menu-item" key={drink.strDrinkThumb}>

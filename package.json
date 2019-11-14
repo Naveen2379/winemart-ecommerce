@@ -35,6 +35,7 @@
   },
   "devDependencies": {
     "@kapost/react-component-slider": "^1.0.5",
-    "react-bootstrap-toggle": "^2.3.2"
+    "react-bootstrap-toggle": "^2.3.2",
+    "react-router-dom": "^5.1.2"
   }
 }
