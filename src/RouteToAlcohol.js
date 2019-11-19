@@ -2,7 +2,7 @@ import React from "react";
 import {BrowserRouter as Router, Link, Route} from 'react-router-dom';
 
 import './switch.css'
-import AlcoholicDrinks from "./AlcoholicDrinks";
+import HomePage from "./HomePage";
 import NavLink from "react-bootstrap/NavLink";
 
 
@@ -17,7 +17,7 @@ class RouteToAlcohol extends React.Component {
 
     handleChange() {
         console.log('handleChange');
-        //<Route path='/AlcoholicDrinks' Component={AlcoholicDrinks} />
+        //<Route path='/HomePage' Component={HomePage} />
     }
 
     render() {
@@ -35,7 +35,7 @@ class RouteToAlcohol extends React.Component {
                 <Router>
                     <Link to="/AlcoholicDrinks">CLICK</Link>
                     <div>
-                        <Route path='/AlcoholicDrinks' component={ AlcoholicDrinks }></Route>
+                        <Route path='/AlcoholicDrinks' component={ HomePage }></Route>
                     </div>
                 </Router>
             </div>

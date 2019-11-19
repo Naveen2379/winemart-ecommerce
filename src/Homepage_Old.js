@@ -11,10 +11,10 @@ import ShowBeers from "./ShowBeers";
 import ShowSoftDrinkSoda from "./ShowSoftDrinkSoda";
 import AlcoholOrNonAlcohol from "./AlcoholorNonAlcohol";
 import RouteToAlcohol from './RouteToAlcohol';
-import AlcoholicDrinks from "./AlcoholicDrinks";
+import HomePage from "./HomePage";
 import {Tab, Tabs} from "react-bootstrap";
 
-class Homepage extends React.Component {
+class Homepage_Old extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -45,7 +45,7 @@ class Homepage extends React.Component {
                 <h3 className="header1">Cocktail WineMart</h3>
             </Row>
             <Row className="A200">
-                <AlcoholicDrinks />
+                <HomePage />
             </Row>
             <Row className="A300">
                 <Col className="filterSideBar" sm={2}>{this.state.isShowingFilter ? '' :  <p>Filter</p>}</Col>
@@ -185,4 +185,4 @@ class Homepage extends React.Component {
 
 
 
-export default Homepage;
+export default Homepage_Old;

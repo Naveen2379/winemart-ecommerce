@@ -18,7 +18,7 @@ class ShowOrdinaryDrinks extends React.Component {
             showAllOrdDrinks: false,
             isShowingOrdDrink: this.props.isShowing,
             isShowingCocktail: this.props.isShowing
-        }
+        };
         const renderLeftArrow = () => <i className="fa fa-caret-left"/>
         const renderRightArrow = () => <i className="fa fa-caret-right"/>
 
@@ -79,7 +79,6 @@ class ShowOrdinaryDrinks extends React.Component {
             showAllOrdDrinks: true,
             listProducts: allOrdDrink
         });
-
         this.props.isShowing();
     }
 
@@ -101,7 +100,6 @@ class ShowOrdinaryDrinks extends React.Component {
             showAllOrdDrinks: false,
             listProducts: ordDrinks
         });
-
         this.props.showHomePage();
     }
 
