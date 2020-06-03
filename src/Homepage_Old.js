@@ -1,17 +1,17 @@
 import React, {useState} from "react";
 import  {Container, Row, Col} from 'react-grid-system'
 
-import './HomePage.css';
+import './styles/MixedDrinks.css';
 
-import ShowOrdinaryDrinks from "./ShowOrdinaryDrinks";
-import ShowCocktails from "./ShowCocktails";
-import ShowShots from "./ShowShots";
-import ShowCoffeeTea from "./ShowCoffeeTea";
-import ShowBeers from "./ShowBeers";
-import ShowSoftDrinkSoda from "./ShowSoftDrinkSoda";
-import AlcoholOrNonAlcohol from "./AlcoholorNonAlcohol";
-import RouteToAlcohol from './RouteToAlcohol';
-import HomePage from "./HomePage";
+import ShowOrdinaryDrinks from "./components/ShowOrdinaryDrinks";
+import ShowCocktails from "./components/ShowCocktails";
+import ShowShots from "./components/ShowShots";
+import ShowCoffeeTea from "./components/ShowCoffeeTea";
+import ShowBeers from "./components/ShowBeers";
+import ShowSoftDrinkSoda from "./components/ShowSoftDrinkSoda";
+import AlcoholOrNonAlcohol from "./components/AlcoholorNonAlcohol";
+import RouteToAlcohol from './components/RouteToAlcohol';
+import HomePage from "./components/HomePage";
 import {Tab, Tabs} from "react-bootstrap";
 
 class Homepage_Old extends React.Component {

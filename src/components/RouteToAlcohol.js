@@ -1,7 +1,7 @@
 import React from "react";
 import {BrowserRouter as Router, Link, Route} from 'react-router-dom';
 
-import './switch.css'
+import '../switch.css'
 import HomePage from "./HomePage";
 import NavLink from "react-bootstrap/NavLink";
 

@@ -40,7 +40,7 @@ class ShowShots extends React.Component {
 
 
     render() {
-        return <div>{isEmpty(this.state.listProducts) ? "" : this.showProd()}</div>
+        return <div>{isEmpty(this.state.listProducts) ? "" : this.showProd()}</div>;
     }
 
 

@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import  {Container, Row, Col} from 'react-grid-system'
 
-import './HomePage.css';
+import '../styles/MixedDrinks.css';
 
 import ShowOrdinaryDrinks from "./ShowOrdinaryDrinks";
 import ShowCocktails from "./ShowCocktails";
@@ -10,7 +10,7 @@ import ShowCoffeeTea from "./ShowCoffeeTea";
 import ShowBeers from "./ShowBeers";
 import ShowSoftDrinkSoda from "./ShowSoftDrinkSoda";
 
-class ShowingMixedDrinks extends React.Component {
+class MixedDrinks extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -64,6 +64,7 @@ class ShowingMixedDrinks extends React.Component {
     }
 
     render() {
+        console.log('mixed');
         return <div>{this.state.showHomepage ? '' : this.homePageInitial()}</div>
     }
 
@@ -99,7 +100,6 @@ class ShowingMixedDrinks extends React.Component {
             isShowingCoffeeTeas: true,
             isShowingBeers: true,
             isShowingSoftDrinkSoda: true
-
         });
     }
 
@@ -154,4 +154,4 @@ class ShowingMixedDrinks extends React.Component {
 
 
 
-export default ShowingMixedDrinks;
+export default MixedDrinks;

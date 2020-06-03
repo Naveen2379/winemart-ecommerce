@@ -1,9 +1,9 @@
 import React from "react";
-import BootstrapSwitchButton from 'bootstrap-switch-button-react'
+import BootstrapSwitchButton from 'bootstrap-switch-button-react';
 import {Button, Row} from "react-bootstrap";
 
-import './switch.css';
-import './AlcoholOrNonAlcohol.css';
+import '../switch.css';
+import '../styles/AlcNonAlcMixed.css';
 
 class AlcoholOrNonAlcohol extends React.Component {
     constructor(props) {
@@ -45,8 +45,6 @@ class AlcoholOrNonAlcohol extends React.Component {
     render() {
         return <div>
             <div className="switch-container">
-
-
                 <h4>Non Alcoholic Drinks</h4>
                 <label>
                     <input ref="switch" checked={ this.state.isChecked } onChange={ this.handleChange } className="switch" type="checkbox" />

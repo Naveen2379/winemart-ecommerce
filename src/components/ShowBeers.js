@@ -2,13 +2,13 @@ import React from "react";
 import {isEmpty} from "lodash";
 import ComponentSlider from "@kapost/react-component-slider";
 
-class ShowCoffeeTea extends React.Component {
+class ShowBeers extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             isLoaded: false,
             listProducts: [],
-            showAllCoffeeTeas: false
+            showAllBeers: false
         }
         const renderLeftArrow = () => <i className="fa fa-caret-left"/>
         const renderRightArrow = () => <i className="fa fa-caret-right"/>
@@ -17,7 +17,7 @@ class ShowCoffeeTea extends React.Component {
     }
 
     componentDidMount() {
-        fetch("https://the-cocktail-db.p.rapidapi.com/filter.php?c=Coffee%20%2F%20Tea", {
+        fetch("https://the-cocktail-db.p.rapidapi.com/filter.php?c=Beer", {
             "method": "GET",
             "headers": {
                 "x-rapidapi-host": "the-cocktail-db.p.rapidapi.com",
@@ -40,7 +40,7 @@ class ShowCoffeeTea extends React.Component {
 
 
     render() {
-        return <div>{isEmpty(this.state.listProducts) ? "" : this.showProd()}</div>
+        return <div>{isEmpty(this.state.listProducts) ? "" : this.showProd()}</div>;
     }
 
 
@@ -58,26 +58,24 @@ class ShowCoffeeTea extends React.Component {
 
 
         return  <div>
-            <div>{this.state.showAllCoffeeTeas ? '' : <h4  className="h4Style">Coffee/Tea Available <button key={this.state.listProducts} onClick={this.showAllCoffeeTeas.bind(this, this.state.listProducts)}>View All</button></h4> }</div>
-            <div>{this.state.showAllCoffeeTeas ? '' : componentSlider }</div>
-            <div>{this.state.showAllCoffeeTeas ?  this.showAlCoffeeTeas() : ''}</div>
+            <div>{this.state.showAllBeers ? '' : <h4 className="h4Style">Beers Available <button key={this.state.listProducts} onClick={this.showAllBeers.bind(this, this.state.listProducts)}>View All</button></h4> }</div>
+            <div>{this.state.showAllBeers ? '' : componentSlider }</div>
+            <div>{this.state.showAllBeers ?  this.showAlBeers() : ''}</div>
         </div>
     }
 
-    showAllCoffeeTeas(allCoffeeTeas) {
+    showAllBeers(allBeers) {
         this.setState({
-            showAllCoffeeTeas: true,
-            listProducts: allCoffeeTeas
+            showAllBeers: true,
+            listProducts: allBeers,
+            show: true
         });
 
         this.props.isShowing();
-
-
-
     }
 
-    showAlCoffeeTeas() {
-        const showDrinks = <div> <h4 className="h4Style"><button key={this.state.listProducts} onClick={this.goBackToCoffeeTeas.bind(this, this.state.listProducts)}>Back</button> All Available Coffee/Tea</h4>
+    showAlBeers() {
+        const showDrinks = <div> <h4 className="h4Style"><button key={this.state.listProducts} onClick={this.goBackToBeers.bind(this, this.state.listProducts)}>Back</button> All Available Beers</h4>
             {this.state.listProducts.drinks.map(drink => {
                 return <div className="menu-item" key={drink.strDrinkThumb}>
                     <img height="150px" width="150px" src={drink.strDrinkThumb} alt="drinkImage"/>
@@ -89,14 +87,13 @@ class ShowCoffeeTea extends React.Component {
 
     }
 
-    goBackToCoffeeTeas(coffeeTeas) {
+    goBackToBeers(beers) {
         this.setState({
-            showAllCoffeeTeas: false,
-            listProducts: coffeeTeas
+            showAllBeers: false,
+            listProducts: beers
         });
-
         this.props.showHomePage();
     }
 }
 
-export default ShowCoffeeTea;
+export default ShowBeers;

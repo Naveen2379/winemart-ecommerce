@@ -1,6 +1,6 @@
 import React, {useState} from "react";
-import './AlcoholOrNonAlcohol.css';
-import './AlcNonAlcMixed.css'
+import '../styles/AlcoholOrNonAlcohol.css';
+import '../styles/AlcNonAlcMixed.css';
 import {isEmpty} from "lodash";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -9,17 +9,13 @@ class NonAlcoholicDrinks extends React.Component {
         constructor(props) {
             super(props);
             this.state = {
-                listProducts: [],
                 eachDrinkDetails: []
             };
             this.handleNonAlcClick = this.handleNonAlcClick.bind(this);
-            this.showNonAlc = this.showNonAlc.bind(this);
-            this.showDrinkDetails = this.showDrinkDetails.bind(this);
             this.showEachNonAlcDrinkDetails = this.showEachNonAlcDrinkDetails.bind(this);
-
         }
 
-    componentDidMount() {
+    /*componentDidMount() {
         fetch("https://the-cocktail-db.p.rapidapi.com/filter.php?a=Non%20Alcoholic", {
             "method": "GET",
             "headers": {
@@ -36,7 +32,7 @@ class NonAlcoholicDrinks extends React.Component {
         this.setState({
             listProducts: result
         });
-    }
+    }*/
 
     handleNonAlcClick(selectedDrinkDets) {
         console.log(selectedDrinkDets.idDrink);
@@ -56,16 +52,25 @@ class NonAlcoholicDrinks extends React.Component {
 }
 
     render() {
-        return <div>
-            <div>{isEmpty(this.state.listProducts) ?  '' : this.showNonAlc()}</div>
+        console.log('non alcohol');
+        const showNonAlcoholDrinks = <div>
+            { isEmpty(this.props.products) ? '' : this.props.products.drinks.map( (drink) => {
+                return <div className="menu-item" key={drink.strDrink} onClick={() => this.handleNonAlcClick(drink)}>
+                    <img height="150px" width="150px" src={drink.strDrinkThumb} alt="drinkImage"/>
+                    <h5>{drink.strDrink}</h5>
+                    <h6>Cost: ₹599/-</h6>
+                </div>
+            })}
         </div>
+        return  <div>{showNonAlcoholDrinks}</div>
     }
 
 
         showNonAlc() {
+        console.log('showNonALc');
             const showDrinks = <div className="showDrinksAlcNonAlc"><h4>Non Alcohol Drinks</h4>
-                {this.state.listProducts.drinks.map(drink => {
-                    return <div className="menu-item" key={drink} onClick={() => this.handleNonAlcClick(drink)}>
+                {this.props.products.drinks.map( (drink) => {
+                    return <div className="menu-item" key={drink.strDrink} onClick={() => this.handleNonAlcClick(drink)}>
                         <img height="150px" width="150px" src={drink.strDrinkThumb} alt="drinkImage"/>
                         <h5>{drink.strDrink}</h5>
                         <h6>Cost: ₹599/-</h6>
@@ -78,6 +83,7 @@ class NonAlcoholicDrinks extends React.Component {
         }
 
         showEachNonAlcDrinkDetails() {
+        console.log('showEachNonAlcDrinkDetails');
             const showDrink = this.state.eachDrinkDetails.drinks[0];
             console.log(this.state.eachDrinkDetails);
             const showSelectedDrinkDetails = <div className='selectedDrinkStyle' style={{width:'1000px'}}>

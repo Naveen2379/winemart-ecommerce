@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Homepage_Old from "./Homepage_Old";
-import HomePage from "./HomePage";
+import HomePage from "./components/HomePage";
 
 
 function App() {

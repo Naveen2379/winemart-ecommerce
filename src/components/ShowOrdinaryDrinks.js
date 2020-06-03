@@ -4,7 +4,7 @@ import {isEmpty} from "lodash";
 import {Col, Row, Table} from 'react-bootstrap';
 import ComponentSlider from "@kapost/react-component-slider";
 
-import './ShowProducts.css'
+import '../ShowProducts.css'
 //import ShowCocktails from "./ShowCocktails";
 
 //Filter By Category - Ordinary_Drink
@@ -46,10 +46,8 @@ class ShowOrdinaryDrinks extends React.Component {
             });
     }
 
-
-
     render() {
-        return <div>{isEmpty(this.state.listProducts) ? "" : this.showProd()}</div>
+        return <div>{isEmpty(this.state.listProducts) ? "" : this.showProd()}</div>;
     }
 
 
