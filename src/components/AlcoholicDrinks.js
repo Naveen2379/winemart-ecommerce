@@ -54,7 +54,7 @@ export default class AlcoholicDrinks extends React.Component {
                 console.log(drinkDtls);
                 return this.setState({
                     eachAlcDrinkDetails: drinkDtls
-                });
+                }, () => this.state.eachAlcDrinkDetails);
             });
     }
 
@@ -67,34 +67,36 @@ export default class AlcoholicDrinks extends React.Component {
                 <h5>{drink.strDrink}</h5>
                 <h6>Cost: ₹599/-</h6>
             </div>)
-            })
-            }</div>;
+            })}
+        </div>;
 
             return (
-            <div className="showDrinksAlcNonAlc">{showAlcoholDrinks}</div>
-        )
+                <div className="showDrinksAlcNonAlc">
+                    <div>{isEmpty(this.state.eachAlcDrinkDetails) ? showAlcoholDrinks : this.showEachAlcDrinkDetails()}</div>
+                </div>
+            );
     }
 
     showEachAlcDrinkDetails() {
-            const showDrink = this.state.eachAlcDrinkDetails.drinks[0];
-            const showSelectedDrinkDetails = <div className='selectedDrinkStyle'  style={{width:'1000px'}} >
-                <h3 align='left'>{showDrink.strDrink}</h3>
-                <Row>
-                    <Col sm='2'>
-                        <img height="150px" width="150px" src={showDrink.strDrinkThumb} alt="drinkImage"/>
-                    </Col>
-                    <Col sm='3'>
-                        <h4>Ingredients</h4>
-                        <h6>{showDrink.strIngredient1}</h6>
-                        <h6>{showDrink.strIngredient2}</h6>
-                    </Col>
-                    <Col sm='3'>
-                        <h4>Instructions</h4>
-                        <h5>{showDrink.strInstructions}</h5>
-                    </Col>
-                </Row>
-            </div>
+        const showDrink = this.state.eachAlcDrinkDetails.drinks[0];
+        const showSelectedDrinkDetails = <div className='selectedDrinkStyle'  style={{width:'1000px'}} >
+            <h3 align='left'>{showDrink.strDrink}</h3>
+            <Row>
+                <Col sm='2'>
+                    <img height="150px" width="150px" src={showDrink.strDrinkThumb} alt="drinkImage"/>
+                </Col>
+                <Col sm='3'>
+                    <h4>Ingredients</h4>
+                    <h6>{showDrink.strIngredient1}</h6>
+                    <h6>{showDrink.strIngredient2}</h6>
+                </Col>
+                <Col sm='3'>
+                    <h4>Instructions</h4>
+                    <h5>{showDrink.strInstructions}</h5>
+                </Col>
+            </Row>
+        </div>
 
-            return <div>{showSelectedDrinkDetails}</div>
+        return <div>{showSelectedDrinkDetails}</div>
     }
 }

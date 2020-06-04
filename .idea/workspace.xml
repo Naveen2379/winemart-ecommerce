@@ -20,28 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4385e495-3ec3-41ff-8765-5c9992b76ca4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/HomePage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/HomePage.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AlcNonAlcMixed.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/AlcNonAlcMixed.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AlcoholOrNonAlcohol.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/AlcoholOrNonAlcohol.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AlcoholicDrinks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AlcoholicDrinks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AlcoholorNonAlcohol.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AlcoholorNonAlcohol.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HomePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/MixedDrinks.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HomePage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Homepage_Old.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Homepage_Old.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NonAlcoholicDrinks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NonAlcoholicDrinks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RouteToAlcohol.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RouteToAlcohol.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ShowBeers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ShowBeers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ShowCocktails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ShowCocktails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ShowCoffeeTea.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ShowCoffeeTea.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ShowOrdinaryDrinks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ShowOrdinaryDrinks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ShowShots.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ShowShots.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ShowSoftDrinkSoda.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ShowSoftDrinkSoda.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ShowingMixedDrinks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MixedDrinks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AlcoholicDrinks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AlcoholicDrinks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NonAlcoholicDrinks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NonAlcoholicDrinks.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +113,7 @@
       <workItem from="1578593973630" duration="586000" />
       <workItem from="1578635589552" duration="549000" />
       <workItem from="1591184288992" duration="6983000" />
-      <workItem from="1591198364518" duration="4621000" />
+      <workItem from="1591198364518" duration="6477000" />
     </task>
     <servers />
   </component>
