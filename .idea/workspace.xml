@@ -21,8 +21,11 @@
   <component name="ChangeListManager">
     <list default="true" id="4385e495-3ec3-41ff-8765-5c9992b76ca4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AlcoholicDrinks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AlcoholicDrinks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NonAlcoholicDrinks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NonAlcoholicDrinks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Homepage_Old.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MixedDrinks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MixedDrinks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ShowCoffeeTea.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ShowCoffeeTea.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ShowOrdinaryDrinks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ShowOrdinaryDrinks.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +116,9 @@
       <workItem from="1578593973630" duration="586000" />
       <workItem from="1578635589552" duration="549000" />
       <workItem from="1591184288992" duration="6983000" />
-      <workItem from="1591198364518" duration="6477000" />
+      <workItem from="1591198364518" duration="7120000" />
+      <workItem from="1591261716029" duration="396000" />
+      <workItem from="1591283071012" duration="4304000" />
     </task>
     <servers />
   </component>
@@ -133,6 +138,14 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="726" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591286270896">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="726" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1591286270896" />
+    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1591262108682">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1591262108682" />
     <state width="1807" height="278" key="GridCell.Tab.0.bottom" timestamp="1591198044400">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -149,9 +162,13 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="1807" height="278" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1591198044399" />
-    <state x="684" y="291" width="618" height="522" key="find.popup" timestamp="1591206633600">
+    <state x="1050" y="297" width="618" height="580" key="find.popup" timestamp="1591286486140">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="684" y="291" width="618" height="522" key="find.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1591206633600" />
+    <state x="1050" y="297" width="618" height="580" key="find.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1591286486140" />
+    <state x="657" y="198" width="672" height="676" key="search.everywhere.popup" timestamp="1591291393494">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="657" y="198" width="672" height="676" key="search.everywhere.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1591291393494" />
   </component>
 </project>

@@ -7,7 +7,7 @@ class ShowCoffeeTea extends React.Component {
         super(props);
         this.state = {
             isLoaded: false,
-            listProducts: [],
+            products: [],
             showAllCoffeeTeas: false
         }
         const renderLeftArrow = () => <i className="fa fa-caret-left"/>
@@ -28,7 +28,7 @@ class ShowCoffeeTea extends React.Component {
             .then(result => {console.log(result);
                 this.setState({
                     isLoaded: true,
-                    listProducts: result
+                    products: result
                 });
 
             })
@@ -40,25 +40,34 @@ class ShowCoffeeTea extends React.Component {
 
 
     render() {
-        return null;                                                                                                                                                         /*<div>{isEmpty(this.state.listProducts) ? "" : this.showProd()}</div>*/
+        return <div>
+            {isEmpty(this.state.products) ? '' : this.showAlCoffeeTeas()}
+        </div>;                                                                                                                                                         /*<div>{isEmpty(this.state.listProducts) ? "" : this.showProd()}</div>*/
     }
 
-
+    showAlCoffeeTeas() {
+        const showDrinks = <div> <h4 className="h4Style"><button key={this.state.listProducts} onClick={this.goBackToCoffeeTeas.bind(this, this.state.listProducts)}>Back</button> All Available Coffee/Tea</h4>
+            {this.state.products.drinks.map(drink => {
+                return <div className="menu-item" key={drink.strDrinkThumb}>
+                    <img height="150px" width="150px" src={drink.strDrinkThumb} alt="drinkImage"/>
+                    <h5>{drink.strDrink}</h5>
+                </div>
+            })}</div>
+        return <div>{showDrinks}</div>
+    }
 
     showProd() {
         const componentSlider = <ComponentSlider renderLeftArrow={this.renderLeftArrow}
                                                  renderRightArrow={this.renderRightArrow}>
-            {this.state.listProducts.drinks.map(drink => {
+            {this.state.products.drinks.map( (drink) => {
                 return <div className="menu-item" key={drink.strDrinkThumb}>
                     <img height="150px" width="150px" src={drink.strDrinkThumb} alt="drinkImage"/>
                     <h5>{drink.strDrink}</h5>
                 </div>
             })}
         </ComponentSlider>
-
-
         return  <div>
-            <div>{this.state.showAllCoffeeTeas ? '' : <h4  className="h4Style">Coffee/Tea Available <button key={this.state.listProducts} onClick={this.showAllCoffeeTeas.bind(this, this.state.listProducts)}>View All</button></h4> }</div>
+            <div>{this.state.showAllCoffeeTeas ? '' : <h4  className="h4Style">Coffee/Tea Available <button key={this.state.products} onClick={this.showAllCoffeeTeas.bind(this, this.state.listProducts)}>View All</button></h4> }</div>
             <div>{this.state.showAllCoffeeTeas ? '' : componentSlider }</div>
             <div>{this.state.showAllCoffeeTeas ?  this.showAlCoffeeTeas() : ''}</div>
         </div>
@@ -69,24 +78,7 @@ class ShowCoffeeTea extends React.Component {
             showAllCoffeeTeas: true,
             listProducts: allCoffeeTeas
         });
-
         this.props.isShowing();
-
-
-
-    }
-
-    showAlCoffeeTeas() {
-        const showDrinks = <div> <h4 className="h4Style"><button key={this.state.listProducts} onClick={this.goBackToCoffeeTeas.bind(this, this.state.listProducts)}>Back</button> All Available Coffee/Tea</h4>
-            {this.state.listProducts.drinks.map(drink => {
-                return <div className="menu-item" key={drink.strDrinkThumb}>
-                    <img height="150px" width="150px" src={drink.strDrinkThumb} alt="drinkImage"/>
-                    <h5>{drink.strDrink}</h5>
-                </div>
-            })}</div>
-
-        return <div>{showDrinks}</div>
-
     }
 
     goBackToCoffeeTeas(coffeeTeas) {
@@ -94,7 +86,6 @@ class ShowCoffeeTea extends React.Component {
             showAllCoffeeTeas: false,
             listProducts: coffeeTeas
         });
-
         this.props.showHomePage();
     }
 }

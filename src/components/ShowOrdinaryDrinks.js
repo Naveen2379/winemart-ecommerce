@@ -9,15 +9,14 @@ import '../ShowProducts.css'
 
 //Filter By Category - Ordinary_Drink
 class ShowOrdinaryDrinks extends React.Component {
-
     constructor(props) {
         super(props);
         this.state = {
             isLoaded: false,
             listProducts: [],
             showAllOrdDrinks: false,
-            isShowingOrdDrink: this.props.isShowing,
-            isShowingCocktail: this.props.isShowing
+            showOrdDrinks: this.props.isShowing,
+            showCocktailDrinks: this.props.isShowing
         };
         const renderLeftArrow = () => <i className="fa fa-caret-left"/>
         const renderRightArrow = () => <i className="fa fa-caret-right"/>
