@@ -37,16 +37,14 @@ class ShowCoffeeTea extends React.Component {
             });
     }
 
-
-
     render() {
         return <div>
-            {isEmpty(this.state.products) ? '' : this.showAlCoffeeTeas()}
-        </div>;                                                                                                                                                         /*<div>{isEmpty(this.state.listProducts) ? "" : this.showProd()}</div>*/
+            {isEmpty(this.state.products) ? '' : this.showProd()}
+        </div>;             /*<div>{isEmpty(this.state.products) ? "" : this.showProd()}</div>*/
     }
 
     showAlCoffeeTeas() {
-        const showDrinks = <div> <h4 className="h4Style"><button key={this.state.listProducts} onClick={this.goBackToCoffeeTeas.bind(this, this.state.listProducts)}>Back</button> All Available Coffee/Tea</h4>
+        const showDrinks = <div> <h4 className="h4Style"><button key={this.state.products} onClick={this.goBackToCoffeeTeas.bind(this, this.state.products)}>Back</button> All Available Coffee/Tea</h4>
             {this.state.products.drinks.map(drink => {
                 return <div className="menu-item" key={drink.strDrinkThumb}>
                     <img height="150px" width="150px" src={drink.strDrinkThumb} alt="drinkImage"/>
@@ -67,7 +65,7 @@ class ShowCoffeeTea extends React.Component {
             })}
         </ComponentSlider>
         return  <div>
-            <div>{this.state.showAllCoffeeTeas ? '' : <h4  className="h4Style">Coffee/Tea Available <button key={this.state.products} onClick={this.showAllCoffeeTeas.bind(this, this.state.listProducts)}>View All</button></h4> }</div>
+            <div>{this.state.showAllCoffeeTeas ? '' : <h4  className="h4Style">Coffee/Tea Available <button key={this.state.products} onClick={this.showAllCoffeeTeas.bind(this, this.state.products)}>View All</button></h4> }</div>
             <div>{this.state.showAllCoffeeTeas ? '' : componentSlider }</div>
             <div>{this.state.showAllCoffeeTeas ?  this.showAlCoffeeTeas() : ''}</div>
         </div>
@@ -76,7 +74,7 @@ class ShowCoffeeTea extends React.Component {
     showAllCoffeeTeas(allCoffeeTeas) {
         this.setState({
             showAllCoffeeTeas: true,
-            listProducts: allCoffeeTeas
+            products: allCoffeeTeas
         });
         this.props.isShowing();
     }
@@ -84,7 +82,7 @@ class ShowCoffeeTea extends React.Component {
     goBackToCoffeeTeas(coffeeTeas) {
         this.setState({
             showAllCoffeeTeas: false,
-            listProducts: coffeeTeas
+            products: coffeeTeas
         });
         this.props.showHomePage();
     }

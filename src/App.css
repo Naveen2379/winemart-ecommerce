@@ -22,11 +22,6 @@
     padding-top: 100px;
 }
 */
-.header1 {
-  text-align: left;
-  padding-left: 100px;
-  font-size: 2rem;
-}
 
 .App-link {
   color: #09d3ac;
@@ -60,16 +55,16 @@
     width: 100%;
 }
 
-.menu-item {
-    width: 100px;
+.figure{
+    width: 240px;
     display: inline-block;
     padding: 15px 10px;
     cursor: pointer;
     text-transform: uppercase;
 }
 
-.menu-item:hover {
-    background: blue;
-    color: #ffffff;
+.figure:hover {
+    background: aliceblue;
     height: auto;
+    border-radius: 5px;
 }

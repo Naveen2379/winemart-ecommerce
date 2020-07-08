@@ -1,0 +1,26 @@
+.tabsStyle {
+    position: fixed;
+}
+
+.ant-layout-header {
+    background: #1d000d;
+    color: white;
+    font-size: xx-large;
+}
+
+.content-section {
+    background: #230312;
+}
+
+.ant-layout-content {
+}
+
+.ant-tabs-nav {
+    margin: 0 !important;
+    color: #ffffff;
+    padding: 0 0 0 5px;
+}
+/*
+.ant-tabs-nav {
+    position: fixed;
+}*/

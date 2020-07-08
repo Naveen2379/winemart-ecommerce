@@ -62,19 +62,19 @@ class MixedDrinks extends React.Component {
     }
 
     render() {
-        console.log('mixed');
+        console.log('mixed', this.props.keyType);
         return <div>{this.state.showMixedDrinks ? this.showDrinks() : ''}</div>
     }
 
     showingHomePage() {
         this.setState({
-            showMixedDrinks: false,
-            showOrdDrinks: false,
-            showCocktailDrinks: false,
-            showShots: false,
-            showCoffeeTeas: false,
-            showBeers: false,
-            showSoftDrinkSodas: false,
+            showMixedDrinks: true,
+            showOrdDrinks: true,
+            showCocktailDrinks: true,
+            showShots: true,
+            showCoffeeTeas: true,
+            showBeers: true,
+            showSoftDrinkSodas: true,
         });
     }
 
@@ -133,7 +133,6 @@ class MixedDrinks extends React.Component {
             showCoffeeTeas: false,
             showBeers: true,
             showSoftDrinkSodas: false
-
         });
     }
 
@@ -145,7 +144,6 @@ class MixedDrinks extends React.Component {
             showCoffeeTeas: false,
             showBeers: false,
             showSoftDrinkSodas: true
-
         });
     }
 }

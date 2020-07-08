@@ -1,0 +1,11 @@
+/*
+.drink-item:hover {
+    background: white;
+}*/
+.figure-caption {
+    color: grey;
+}
+
+.figure-caption:hover {
+    color: #ffa700;
+}

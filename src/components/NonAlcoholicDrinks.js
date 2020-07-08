@@ -4,85 +4,42 @@ import '../styles/AlcNonAlcMixed.css';
 import {isEmpty} from "lodash";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Drinks from "./Drinks";
 
 class NonAlcoholicDrinks extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            eachDrinkDetails: []
+            nonAlcDrinks: []
         };
-        this.handleNonAlcClick = this.handleNonAlcClick.bind(this);
-        this.showEachNonAlcDrinkDetails = this.showEachNonAlcDrinkDetails.bind(this);
     }
 
-    handleNonAlcClick(selectedDrinkDets) {
-        const fetchDrinkId = selectedDrinkDets.idDrink;
-        const fetchUrl = "https://the-cocktail-db.p.rapidapi.com/lookup.php?i=" + fetchDrinkId + "";
-        return fetch(fetchUrl, {
+    componentDidMount() {
+        console.log(this.props.keyType);
+        const drinkType = this.props.keyType;
+        fetch("https://the-cocktail-db.p.rapidapi.com/filter.php?a="+drinkType+"", {
             "method": "GET",
             "headers": {
                 "x-rapidapi-host": "the-cocktail-db.p.rapidapi.com",
                 "x-rapidapi-key": "0f95de4865msh72bc273490c401cp149a69jsn898244e5583b"
             }
-        })
-        .then(response => response.json())
-        .then((drinkDtls) => this.setState({
-            eachDrinkDetails: drinkDtls
-        }))
-            .catch((err) => {
-                console.log(err.message);
+        }).then(response => response.json())
+            .then(result => {console.log(result);
+                this.setState({
+                    nonAlcDrinks: result.drinks
+                });
+            })
+            .catch(err => {
+                console.log(err);
             });
-}
-
-    render() {
-        const showNonAlcoholDrinks = <div>
-            { isEmpty(this.props.products) ? '' : this.props.products.drinks.map( (drink) => {
-                return <div className="menu-item" key={drink.strDrink} onClick={() => this.handleNonAlcClick(drink)}>
-                    <img height="150px" width="150px" src={drink.strDrinkThumb} alt="drinkImage"/>
-                    <h5>{drink.strDrink}</h5>
-                    <h6>Cost: ₹599/-</h6>
-                </div>
-            })}
-        </div>
-        return  <div>{isEmpty(this.state.eachDrinkDetails) ? showNonAlcoholDrinks : this.showEachNonAlcDrinkDetails()}</div>
     }
 
-
-        showNonAlc() {
-            const showDrinks = <div className="showDrinksAlcNonAlc"><h4>Non Alcohol Drinks</h4>
-                {this.props.products.drinks.map( (drink) => {
-                    return <div className="menu-item" key={drink.strDrink} onClick={() => this.handleNonAlcClick(drink)}>
-                        <img height="150px" width="150px" src={drink.strDrinkThumb} alt="drinkImage"/>
-                        <h5>{drink.strDrink}</h5>
-                        <h6>Cost: ₹599/-</h6>
-                    </div>
-                })}</div>;
-            return <div>
-                <div>{isEmpty(this.state.eachDrinkDetails) ? showDrinks : ''}</div>
-                <div>{isEmpty(this.state.eachDrinkDetails) ? '' : this.showEachNonAlcDrinkDetails()}</div>
+    render() {
+        return (
+            <div>
+                {isEmpty(this.state.nonAlcDrinks) ? '' : <Drinks drinks={this.state.nonAlcDrinks} />}
             </div>
-        }
-
-        showEachNonAlcDrinkDetails() {
-            const showDrink = this.state.eachDrinkDetails.drinks[0];
-            const showSelectedDrinkDetails = <div className='selectedDrinkStyle' style={{width:'1000px'}}>
-            <h3 align='left'>{showDrink.strDrink}</h3>
-                <Row>
-                    <Col sm='2'>
-                        <img height="150px" width="150px" src={showDrink.strDrinkThumb} alt="drinkImage"/>
-                    </Col>
-                <Col sm='3'>
-                    <h4>Ingredients</h4>
-                    <h6>{showDrink.strIngredient1}</h6>
-                    <h6>{showDrink.strIngredient2}</h6>
-                </Col>
-                    <Col sm='3'>
-                        <h4>Instructions</h4>
-                        <h5>{showDrink.strInstructions}</h5>
-                    </Col>
-                </Row>
-            </div>
-        return <div>{showSelectedDrinkDetails}</div>
+        );
     }
 }
 

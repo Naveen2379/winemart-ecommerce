@@ -1,5 +1,5 @@
 .containerStyle {
-    min-width: 1841px;
+    width: auto;
 }
 
 .filterSideBar {
@@ -46,7 +46,6 @@
 }
 .A3100 {
     margin: 1px 0px;
-    background-color: white;
 }
 
 .A3200 {

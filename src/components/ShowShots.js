@@ -7,7 +7,7 @@ class ShowShots extends React.Component {
         super(props);
         this.state = {
             isLoaded: false,
-            listProducts: [],
+            products: [],
             showAllShots: false
         }
         const renderLeftArrow = () => <i className="fa fa-caret-left"/>
@@ -28,7 +28,7 @@ class ShowShots extends React.Component {
             .then(result => {console.log(result);
                 this.setState({
                     isLoaded: true,
-                    listProducts: result
+                    products: result
                 });
 
             })
@@ -40,7 +40,7 @@ class ShowShots extends React.Component {
 
 
     render() {
-        return <div>{isEmpty(this.state.listProducts) ? "" : this.showProd()}</div>;
+        return <div>{isEmpty(this.state.products) ? "" : this.showProd()}</div>;
     }
 
 
@@ -48,7 +48,7 @@ class ShowShots extends React.Component {
     showProd() {
         const componentSlider = <ComponentSlider renderLeftArrow={this.renderLeftArrow}
                                                  renderRightArrow={this.renderRightArrow}>
-            {this.state.listProducts.drinks.map(drink => {
+            {this.state.products.drinks.map(drink => {
                 return <div className="menu-item" key={drink.strDrinkThumb}>
                     <img height="150px" width="150px" src={drink.strDrinkThumb} alt="drinkImage"/>
                     <h5>{drink.strDrink}</h5>
@@ -58,7 +58,7 @@ class ShowShots extends React.Component {
 
 
         return  <div>
-            <div>{this.state.showAllShots ? '' : <h4 className="h4Style">Shots Available <button key={this.state.listProducts} onClick={this.showAllShots.bind(this, this.state.listProducts)}>View All</button></h4> }</div>
+            <div>{this.state.showAllShots ? '' : <h4 className="h4Style">Shots Available <button key={this.state.products} onClick={this.showAllShots.bind(this, this.state.products)}>View All</button></h4> }</div>
             <div>{this.state.showAllShots ? '' : componentSlider }</div>
             <div>{this.state.showAllShots ?  this.showAlShots() : ''}</div>
         </div>
@@ -67,7 +67,7 @@ class ShowShots extends React.Component {
     showAllShots(allShots) {
         this.setState({
             showAllShots: true,
-            listProducts: allShots,
+            products: allShots,
             show: true
         });
 
@@ -76,8 +76,8 @@ class ShowShots extends React.Component {
     }
 
     showAlShots() {
-        const showDrinks = <div> <h4 className="h4Style"><button key={this.state.listProducts} onClick={this.goBackToOrdDrinks.bind(this, this.state.listProducts)}>Back</button> All Available Shots</h4>
-            {this.state.listProducts.drinks.map(drink => {
+        const showDrinks = <div> <h4 className="h4Style"><button key={this.state.products} onClick={this.goBackToOrdDrinks.bind(this, this.state.products)}>Back</button> All Available Shots</h4>
+            {this.state.products.drinks.map(drink => {
                 return <div className="menu-item" key={drink.strDrinkThumb}>
                     <img height="150px" width="150px" src={drink.strDrinkThumb} alt="drinkImage"/>
                     <h5>{drink.strDrink}</h5>
@@ -91,7 +91,7 @@ class ShowShots extends React.Component {
     goBackToOrdDrinks(shots) {
         this.setState({
             showAllShots: false,
-            listProducts: shots
+            products: shots
         });
 
         this.props.showHomePage();
