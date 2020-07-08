@@ -20,34 +20,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4385e495-3ec3-41ff-8765-5c9992b76ca4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Drink.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/DrinkPrepHelp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Drinks.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/FetchDrinkDetails.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/MixedDrink_Type.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/MixedDrinks_Test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/cocktaildB_logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/DrinkPrepHelp.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/Drinks.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/MixedDrinks_Test.js.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ShowProducts.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShowProducts.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AlcoholicDrinks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AlcoholicDrinks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WineMartHomePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ShowProducts.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AlcoholorNonAlcohol.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Drink.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Drink.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DrinkPrepHelp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DrinkPrepHelp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Drinks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Drinks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FetchDrinkDetails.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MixedDrink_Type.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MixedDrink_Type.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/MixedDrinks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MixedDrinks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NonAlcoholicDrinks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NonAlcoholicDrinks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/RouteToAlcohol.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RouteToAlcohol.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ShowBeers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ShowBeers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ShowCocktails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ShowCocktails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ShowCoffeeTea.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ShowCoffeeTea.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ShowOrdinaryDrinks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ShowOrdinaryDrinks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ShowShots.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ShowShots.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ShowSoftDrinkSoda.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ShowSoftDrinkSoda.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/AlcoholOrNonAlcohol.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/AlcoholOrNonAlcohol.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/HomePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/WineMartHomePage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/MixedDrinks.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/MixedDrinks.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MixedDrinks_Test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/RouteToAlcohol.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ShowBeers.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ShowCocktails.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ShowCoffeeTea.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ShowOrdinaryDrinks.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ShowShots.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ShowSoftDrinkSoda.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/WineMartHomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WineMartHomePage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,12 +103,12 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="MixedDrinks_Test.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/components/MixedDrinks_Test.js" working-dir="$PROJECT_DIR$/src/components">
+    <configuration name="MixedDrinks.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/components/MixedDrinks.js" working-dir="$PROJECT_DIR$/src/components">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Node.js.MixedDrinks_Test.js" />
+        <item itemvalue="Node.js.MixedDrinks.js" />
       </list>
     </recent_temporary>
   </component>
@@ -161,7 +152,7 @@
       <workItem from="1591378530261" duration="1204000" />
       <workItem from="1591430358929" duration="3642000" />
       <workItem from="1594141513826" duration="8096000" />
-      <workItem from="1594193655356" duration="27525000" />
+      <workItem from="1594193655356" duration="37121000" />
     </task>
     <servers />
   </component>
@@ -181,10 +172,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="726" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591286270896">
+    <state x="726" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1594242496449">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="726" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1591286270896" />
+    <state x="726" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1594242496449" />
     <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1591434816925">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -205,21 +196,21 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="1807" height="278" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1594200099338" />
-    <state x="710" y="236" width="556" height="633" key="RollbackChangesDialog" timestamp="1594221149262">
+    <state x="710" y="236" width="556" height="633" key="RollbackChangesDialog" timestamp="1594241712775">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="710" y="236" width="556" height="633" key="RollbackChangesDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1594221149262" />
+    <state x="710" y="236" width="556" height="633" key="RollbackChangesDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1594241712775" />
     <state x="764" y="467" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1594199276706">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="764" y="467" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/67.27.1853.1053@67.27.1853.1053" timestamp="1594199276706" />
-    <state x="1050" y="297" width="618" height="580" key="find.popup" timestamp="1594223398508">
+    <state x="1050" y="297" width="618" height="580" key="find.popup" timestamp="1594242349302">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="1050" y="297" width="618" height="580" key="find.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1594223398508" />
-    <state x="657" y="198" width="672" height="676" key="search.everywhere.popup" timestamp="1591291393494">
+    <state x="1050" y="297" width="618" height="580" key="find.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1594242349302" />
+    <state x="657" y="198" width="672" height="676" key="search.everywhere.popup" timestamp="1594229794612">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="657" y="198" width="672" height="676" key="search.everywhere.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1591291393494" />
+    <state x="657" y="198" width="672" height="676" key="search.everywhere.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1594229794612" />
   </component>
 </project>

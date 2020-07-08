@@ -5,7 +5,6 @@ import '../styles/MixedDrinks.css';
 import {Figure} from "react-bootstrap";
 import FigureCaption from "react-bootstrap/FigureCaption";
 import DrinkPrepHelp from "./DrinkPrepHelp";
-import {fetchDrinkDetails} from "./FetchDrinkDetails";
 
 export default class MixedDrink_Type extends React.Component {
     constructor(props) {
@@ -53,40 +52,26 @@ export default class MixedDrink_Type extends React.Component {
         console.log(drinkId);
         /*fetchDrinkDetails(drinkId)
             .then((drinkDetails)=> console.log(drinkDetails));*/
-        const fetchUrl = "https://the-cocktail-db.p.rapidapi.com/lookup.php?i=" + drinkId + "";
-        return fetch(fetchUrl, {
-            "method": "GET",
-            "headers": {
-                "x-rapidapi-host": "the-cocktail-db.p.rapidapi.com",
-                "x-rapidapi-key": "0f95de4865msh72bc273490c401cp149a69jsn898244e5583b"
-            }
-        })
-            .then(response => {
-                return response.json();
-            })
-            .then((drinkDtls) => {
-                return this.setState({
-                    eachDrinkDetails: drinkDtls.drinks[0]
-                }, () => this.state.eachDrinkDetails);
-            });
+        this.props.handleDrinkClick(drinkId);
     }
 
     render() {
+        const drinksNames = this.props.drinksNames;
         const drinks = this.state.drinks;
         const componentSlider = <ComponentSlider renderLeftArrow={this.renderLeftArrow}
                                                  renderRightArrow={this.renderRightArrow}>
             {drinks.map(drink => {
-                return <Figure key={drink.strDrinkThumb} onClick={this.handleDrinkClick.bind(this, drink.idDrink)}>
+                return<Figure key={drink.strDrinkThumb} onClick={this.handleDrinkClick.bind(this, drink.idDrink)}>
                     <img height="150px" width="150px" src={drink.strDrinkThumb} alt="drinkImage"/>
                     <FigureCaption>
                         <b>{drink.strDrink}</b>
                         <h6>Cost: {Math.floor(Math.random()*(1000-500)+500)} ₹</h6>
                     </FigureCaption>
                 </Figure>
-            })}
+            })};
         </ComponentSlider>
 
-        const showDrinks = <div className="A3100">{isEmpty(drinks) ? '' :
+        const showDrinks = <div className="A3100">{isEmpty(this.state.drinks) ? '' :
             <React.Fragment>
                 <div>{<h4 className="h4Style">{this.props.drinkTypeName}s Available <button onClick={this.showAllDrinks.bind(this, drinks)}>View All</button></h4> }</div>
                 <div>{componentSlider}</div>

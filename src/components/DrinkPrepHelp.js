@@ -1,10 +1,10 @@
 import React from "react";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import {Row, Col} from "react-bootstrap";
 
 export default class DrinkPrepHelp extends React.Component {
     render() {
         const drinkInfo = this.props.drinkInfo;
+        console.log(drinkInfo);
         return (
             <div className='selectedDrinkStyle' >
                 <h3 align='left'>{drinkInfo.strDrink}</h3>

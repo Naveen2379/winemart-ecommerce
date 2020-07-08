@@ -1,151 +1,83 @@
 import React from "react";
-import  {Container, Row, Col} from 'react-grid-system'
-
+import MixedDrink_Type from "./MixedDrink_Type";
+import {Container} from "react-bootstrap";
+import {isEmpty} from "lodash";
+import Drinks from "./Drinks";
 import '../styles/MixedDrinks.css';
+import DrinkPrepHelp from "./DrinkPrepHelp";
 
-import ShowOrdinaryDrinks from "./ShowOrdinaryDrinks";
-import ShowCocktails from "./ShowCocktails";
-import ShowShots from "./ShowShots";
-import ShowCoffeeTea from "./ShowCoffeeTea";
-import ShowBeers from "./ShowBeers";
-import ShowSoftDrinkSoda from "./ShowSoftDrinkSoda";
-
-class MixedDrinks extends React.Component {
+export default class MixedDrinks extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            showMixedDrinks: true,
-            showOrdDrinks: true,
-            showCocktailDrinks: true,
-            showShots: true,
-            showCoffeeTeas: true,
-            showBeers: true,
-            showSoftDrinkSodas: true,
-            showAlcNonAlcDrinks: true,
+            availableDrinksNames: ['Ordinary_Drink', 'Cocktail', 'Shot', 'Coffee / Tea', 'Beer', 'Soft Drink / Soda' ],
+            drinks: [],
+            eachDrinkDetails: []
         };
-        this.showingOrdDrink = this.showingOrdDrink.bind(this);
-        this.showingCocktail = this.showingCocktail.bind(this);
-        this.showingShots = this.showingShots.bind(this);
-        this.showingCoffeeTeas = this.showingCoffeeTeas.bind(this);
-        this.showingBeers = this.showingBeers.bind(this);
-        this.showingSoftDrinkSoda = this.showingSoftDrinkSoda.bind(this);
-        this.showingHomePage = this.showingHomePage.bind(this);
-        this.showDrinks = this.showDrinks.bind(this);
+        this.showAllDrinks = this.showAllDrinks.bind(this);
+        this.showMixedDrinks = this.showMixedDrinks.bind(this);
+        this.handleDrinkClick = this.handleDrinkClick.bind(this);
     }
 
-    showDrinks() {
-        const mixedDrinks = <Container className="containerStyle">
-            <Row className="A300">
-                <Col className="componentsStyle" sm={10}>
-                    <div className="A3100">
-                        {this.state.showOrdDrinks ? <ShowOrdinaryDrinks isShowing={this.showingOrdDrink} showHomePage={this.showingHomePage} /> : ''}
-                    </div>
-                    <div className="A3200">
-                        {this.state.showCocktailDrinks ? <ShowCocktails isShowing={this.showingCocktail} showHomePage={this.showingHomePage} /> : ''}
-                    </div>
-                    <div className="A3300">
-                        {this.state.showShots ? <ShowShots isShowing={this.showingShots} showHomePage={this.showingHomePage} /> : ''}
-                    </div>
-                    <div className="A3400">
-                        {this.state.showCoffeeTeas ? <ShowCoffeeTea isShowing={this.showingCoffeeTeas} showHomePage={this.showingHomePage} /> : ''}
-                    </div>
-                    <div className="A3500">
-                        {this.state.showBeers ? <ShowBeers isShowing={this.showingBeers} showHomePage={this.showingHomePage} /> : ''}
-                    </div>
-                    <div className="A3600">
-                        {this.state.showSoftDrinkSodas ? <ShowSoftDrinkSoda isShowing={this.showingSoftDrinkSoda} showHomePage={this.showingHomePage} /> : ''}
-                    </div>
-                </Col>
-            </Row>
-        </Container>
-        return <div>{mixedDrinks}</div>
+    showAllDrinks(drinks) {
+        console.log(drinks);
+        const mixedDrink_type_details = drinks;
+        this.setState({
+            drinks: mixedDrink_type_details
+        });
+    }
+
+    showMixedDrinks() {
+        this.setState({
+            drinks: []
+        });
+    }
+
+    handleDrinkClick(drinkId) {
+        console.log('handle drink click');
+        const fetchUrl = "https://the-cocktail-db.p.rapidapi.com/lookup.php?i=" + drinkId + "";
+        return fetch(fetchUrl, {
+            "method": "GET",
+            "headers": {
+                "x-rapidapi-host": "the-cocktail-db.p.rapidapi.com",
+                "x-rapidapi-key": "0f95de4865msh72bc273490c401cp149a69jsn898244e5583b"
+            }
+        })
+            .then(response => {
+                return response.json();
+            })
+            .then((drinkDtls) => {
+                this.setState({
+                    eachDrinkDetails: drinkDtls.drinks[0]
+                }, () => this.state.eachDrinkDetails);
+            });
     }
 
     render() {
-        console.log('mixed', this.props.keyType);
-        return <div>{this.state.showMixedDrinks ? this.showDrinks() : ''}</div>
-    }
-
-    showingHomePage() {
-        this.setState({
-            showMixedDrinks: true,
-            showOrdDrinks: true,
-            showCocktailDrinks: true,
-            showShots: true,
-            showCoffeeTeas: true,
-            showBeers: true,
-            showSoftDrinkSodas: true,
+        const drinksNames = this.state.availableDrinksNames;
+        const mixed_drinks = drinksNames.map( (drinkTypeName) => {
+            return (
+                <div key={drinkTypeName} className="A300">
+                    <MixedDrink_Type drinkTypeName={drinkTypeName} showAllDrinks={this.showAllDrinks} handleDrinkClick={this.handleDrinkClick} />
+                </div>
+            );
         });
-    }
 
-    showingOrdDrink() {
-        this.setState({
-            showOrdDrinks: true,
-            showCocktailDrinks: false,
-            showShots: false,
-            showCoffeeTeas: false,
-            showBeers: false,
-            showSoftDrinkSodas: false
-
-        });
-    }
-
-    showingCocktail() {
-        this.setState({
-            showOrdDrinks: false,
-            showCocktailDrinks: true,
-            showShots: false,
-            showCoffeeTeas: false,
-            showBeers: false,
-            showSoftDrinkSodas: false
-        });
-    }
-
-    showingShots() {
-        this.setState({
-            showOrdDrinks: false,
-            showCocktailDrinks: false,
-            showShots: true,
-            showCoffeeTeas: false,
-            showBeers: false,
-            showSoftDrinkSodas: false
-
-        });
-    }
-
-    showingCoffeeTeas() {
-        this.setState({
-            showOrdDrinks: false,
-            showCocktailDrinks: false,
-            showShots: false,
-            showCoffeeTeas: true,
-            showBeers: false,
-            showSoftDrinkSodas: false
-
-        });
-    }
-
-    showingBeers() {
-        this.setState({
-            showOrdDrinks: false,
-            showCocktailDrinks: false,
-            showShots: false,
-            showCoffeeTeas: false,
-            showBeers: true,
-            showSoftDrinkSodas: false
-        });
-    }
-
-    showingSoftDrinkSoda() {
-        this.setState({
-            showOrdDrinks: false,
-            showCocktailDrinks: false,
-            showShots: false,
-            showCoffeeTeas: false,
-            showBeers: false,
-            showSoftDrinkSodas: true
-        });
+        return (
+            <Container className="containerStyle">
+                {isEmpty(this.state.eachDrinkDetails) ?
+                    <div>
+                        {isEmpty(this.state.drinks) ? <div>{mixed_drinks}</div> :
+                            <div className='part-mixed-drinks'>
+                                <button onClick={this.showMixedDrinks}>{'<<Back'}</button>
+                                <Drinks drinks={this.state.drinks} />
+                            </div>
+                        }
+                    </div> :
+                    <div>
+                        <DrinkPrepHelp drinkInfo={this.state.eachDrinkDetails} />
+                    </div>}
+            </Container>
+        );
     }
 }
-
-export default MixedDrinks;

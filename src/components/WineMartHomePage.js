@@ -2,11 +2,10 @@ import React, {useState} from "react";
 import {Avatar, Layout, Tabs} from "antd";
 import 'antd/dist/antd.css';
 
-import MixedDrinks from './MixedDrinks';
 import AlcoholicDrinks from "./AlcoholicDrinks";
 import NonAlcoholicDrinks from "./NonAlcoholicDrinks";
 import '../styles/WineMartHomePage.css';
-import MixedDrinks_Test from "./MixedDrinks_Test";
+import MixedDrinks from "./MixedDrinks";
 
 const { TabPane } = Tabs;
 const { Header, Content } = Layout;
@@ -47,7 +46,7 @@ export default class WineMartHomePage extends React.Component {
                         {this.state.key === 'Non Alcoholic' ? <NonAlcoholicDrinks keyType={this.state.key} /> : ''}
                     </TabPane>
                     <TabPane tab="All Kinds of Drinks" key="Mixed Drinks">
-                        {this.state.key === 'Mixed Drinks' ? <MixedDrinks_Test keyType={this.state.key} /> : ''}
+                        {this.state.key === 'Mixed Drinks' ? <MixedDrinks keyType={this.state.key} /> : ''}
                     </TabPane>
                 </Tabs>
             </Content>

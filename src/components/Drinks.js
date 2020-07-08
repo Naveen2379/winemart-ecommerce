@@ -5,7 +5,7 @@ import '../styles/Drinks.css';
 import '../App.css';
 import {Figure} from "react-bootstrap";
 import FigureCaption from "react-bootstrap/FigureCaption";
-import {FetchDrinkDetails} from "./FetchDrinkDetails";
+import {Drink} from "./Drink";
 
 export default class Drinks extends React.Component {
     constructor(props) {
@@ -31,7 +31,7 @@ export default class Drinks extends React.Component {
             })
             .then((drinkDtls) => {
                 console.log(drinkDtls);
-                return this.setState({
+                this.setState({
                     eachDrinkDetails: drinkDtls.drinks[0]
                 }, () => this.state.eachDrinkDetails);
             });
@@ -40,15 +40,10 @@ export default class Drinks extends React.Component {
     render() {
         const drinks = this.props.drinks;
         const showAllDrinks = drinks.map( (drinkDetails) => {
-            return (
-            <Figure key={drinkDetails.strDrink} onClick={() => this.handleDrinkClick(drinkDetails.idDrink)} >
-                <img height="150px" width="150px" src={drinkDetails.strDrinkThumb} alt="drinkImage"/>
-                <FigureCaption>
-                    <b>{drinkDetails.strDrink}</b>
-                    <h6>Cost: {Math.floor(Math.random()*(1000-500)+500)} ₹</h6>
-                </FigureCaption>
-            </Figure>
-        )});
+            return (<React.Fragment key={drinkDetails.idDrink}>
+                    <Drink drinkDetails={drinkDetails} handleDrinkClick={this.handleDrinkClick} />
+            </React.Fragment>
+            )});
         return (
             <div>
                 {isEmpty(this.state.eachDrinkDetails) ? <React.Fragment>{showAllDrinks}</React.Fragment> : <DrinkPrepHelp drinkInfo={this.state.eachDrinkDetails} />}
