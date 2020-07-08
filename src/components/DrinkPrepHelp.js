@@ -1,5 +1,6 @@
 import React from "react";
 import {Row, Col} from "react-bootstrap";
+import '../styles/DrinkPrepHelp.css';
 
 export default class DrinkPrepHelp extends React.Component {
     render() {
@@ -14,8 +15,8 @@ export default class DrinkPrepHelp extends React.Component {
                     </Col>
                     <Col sm='3'>
                         <h4>Ingredients</h4>
-                        <h6>{drinkInfo.strIngredient1}</h6>
-                        <h6>{drinkInfo.strIngredient2}</h6>
+                        <h5>{drinkInfo.strIngredient1}</h5>
+                        <h5>{drinkInfo.strIngredient2}</h5>
                     </Col>
                     <Col sm='3'>
                         <h4>Instructions</h4>

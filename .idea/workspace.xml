@@ -21,24 +21,10 @@
   <component name="ChangeListManager">
     <list default="true" id="4385e495-3ec3-41ff-8765-5c9992b76ca4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ShowProducts.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AlcoholorNonAlcohol.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Drink.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Drink.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/DrinkPrepHelp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DrinkPrepHelp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Drinks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Drinks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FetchDrinkDetails.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/MixedDrink_Type.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MixedDrink_Type.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MixedDrinks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MixedDrinks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MixedDrinks_Test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/RouteToAlcohol.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ShowBeers.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ShowCocktails.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ShowCoffeeTea.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ShowOrdinaryDrinks.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ShowShots.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ShowSoftDrinkSoda.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WineMartHomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WineMartHomePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/MixedDrinks.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/MixedDrinks.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/MixedDrinks_Test.js.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/MixedDrinks_Test.js.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +138,7 @@
       <workItem from="1591378530261" duration="1204000" />
       <workItem from="1591430358929" duration="3642000" />
       <workItem from="1594141513826" duration="8096000" />
-      <workItem from="1594193655356" duration="37121000" />
+      <workItem from="1594193655356" duration="38546000" />
     </task>
     <servers />
   </component>
@@ -204,10 +190,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="764" y="467" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/67.27.1853.1053@67.27.1853.1053" timestamp="1594199276706" />
-    <state x="1050" y="297" width="618" height="580" key="find.popup" timestamp="1594242349302">
+    <state x="1050" y="297" width="618" height="580" key="find.popup" timestamp="1594243874002">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="1050" y="297" width="618" height="580" key="find.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1594242349302" />
+    <state x="1050" y="297" width="618" height="580" key="find.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1594243874002" />
     <state x="657" y="198" width="672" height="676" key="search.everywhere.popup" timestamp="1594229794612">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>

@@ -73,7 +73,7 @@ export default class MixedDrink_Type extends React.Component {
 
         const showDrinks = <div className="A3100">{isEmpty(this.state.drinks) ? '' :
             <React.Fragment>
-                <div>{<h4 className="h4Style">{this.props.drinkTypeName}s Available <button onClick={this.showAllDrinks.bind(this, drinks)}>View All</button></h4> }</div>
+                <div>{<h4 className="h4Style">{this.props.drinkTypeName}s Available <button className='buttonStyle' onClick={this.showAllDrinks.bind(this, drinks)}>View All</button></h4> }</div>
                 <div>{componentSlider}</div>
             </React.Fragment>
         }</div>;

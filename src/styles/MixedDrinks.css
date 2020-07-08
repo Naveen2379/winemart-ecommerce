@@ -8,15 +8,23 @@
     margin-top: 22px;
 }
 
-.componentsStyle {
-
-}
-
-/*.header1 {
-    min-height: 100px;
-}*/
 .h4Style {
     padding: 10px 0px;
+    color: floralwhite;
+}
+
+.buttonStyle {
+    color: darkgoldenrod;
+}
+h5 {
+    color: grey;
+}
+h3 {
+    text-align: left;
+    color: aliceblue;
+}
+h4 {
+    color: aliceblue;
 }
 
 .showDrinks {
