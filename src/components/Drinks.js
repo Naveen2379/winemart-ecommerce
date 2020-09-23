@@ -13,9 +13,9 @@ export default class Drinks extends React.Component {
         this.state = {
             eachDrinkDetails: []
         }
-        this.handleDrinkClick = this.handleDrinkClick.bind(this);
     }
-    handleDrinkClick(drinkId) {
+
+    handleDrinkClick = (drinkId) => {
         console.log(this.state.eachDrinkDetails);
         console.log('drink clicked');
         const fetchUrl = "https://the-cocktail-db.p.rapidapi.com/lookup.php?i=" + drinkId + "";
@@ -38,7 +38,9 @@ export default class Drinks extends React.Component {
     }
 
     render() {
-        const drinks = this.props.drinks;
+        console.log('Drinks');
+        const { eachDrinkDetails } = this.state;
+        const { drinks } = this.props;
         const showAllDrinks = drinks.map( (drinkDetails) => {
             return (<React.Fragment key={drinkDetails.idDrink}>
                     <Drink drinkDetails={drinkDetails} handleDrinkClick={this.handleDrinkClick} />
@@ -46,7 +48,7 @@ export default class Drinks extends React.Component {
             )});
         return (
             <div>
-                {isEmpty(this.state.eachDrinkDetails) ? <React.Fragment>{showAllDrinks}</React.Fragment> : <DrinkPrepHelp drinkInfo={this.state.eachDrinkDetails} />}
+                {isEmpty(eachDrinkDetails) ? <React.Fragment>{showAllDrinks}</React.Fragment> : <DrinkPrepHelp drinkInfo={eachDrinkDetails} />}
             </div>
         )
     }

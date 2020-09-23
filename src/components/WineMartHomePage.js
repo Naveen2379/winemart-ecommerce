@@ -1,11 +1,11 @@
 import React, {useState} from "react";
-import {Avatar, Layout, Tabs} from "antd";
+import { Layout, Tabs} from "antd";
 import 'antd/dist/antd.css';
 
-import AlcoholicDrinks from "./AlcoholicDrinks";
-import NonAlcoholicDrinks from "./NonAlcoholicDrinks";
-import '../styles/WineMartHomePage.css';
 import MixedDrinks from "./MixedDrinks";
+import {fetchDrinks} from "./FetchDrinks";
+import Drinks from "./Drinks";
+import '../styles/WineMartHomePage.css';
 
 const { TabPane } = Tabs;
 const { Header, Content } = Layout;
@@ -16,22 +16,18 @@ export default class WineMartHomePage extends React.Component {
         super(props);
         this.state = {
             key: 'Alcoholic',
-            alcDrinks: [],
-            nonAlcDrinks: [],
-            drinkType: 'alcohol',
-            showAlcDrinks: false,
-            showSelectedDrink: true
         };
-        this.handleChange = this.handleChange.bind(this);
     }
 
-    handleChange(key) {
+    handleChange = (key) => {
         this.setState({
             key: key
         });
     }
 
     render() {
+        const {key} = this.state;
+        const FetchDrinksComp = fetchDrinks(Drinks);
         return <Layout>
             <Header>
                 {/*<img src='../images/cocktaildB_logo.png' alt='CocktaildB Image' />*/}
@@ -40,13 +36,13 @@ export default class WineMartHomePage extends React.Component {
             <Content className='content-section'>
                 <Tabs size='large' onChange={this.handleChange}>
                     <TabPane tab="Alcohol" key="Alcoholic">
-                        {this.state.key === "Alcoholic" ? <AlcoholicDrinks keyType={this.state.key} showSelectedDrink={this.state.showSelectedDrink} /> : ''}
+                        <div>{key === "Alcoholic" ? <FetchDrinksComp drinksType={key} /> : ''}</div>
                     </TabPane>
                     <TabPane tab="Non Alcohol" key="Non Alcoholic">
-                        {this.state.key === 'Non Alcoholic' ? <NonAlcoholicDrinks keyType={this.state.key} /> : ''}
+                        <div>{key === 'Non Alcoholic' ? <FetchDrinksComp drinksType={key} />  : ''}</div>
                     </TabPane>
                     <TabPane tab="All Kinds of Drinks" key="Mixed Drinks">
-                        {this.state.key === 'Mixed Drinks' ? <MixedDrinks keyType={this.state.key} /> : ''}
+                        {key === 'Mixed Drinks' ? <MixedDrinks keyType={key} /> : ''}
                     </TabPane>
                 </Tabs>
             </Content>

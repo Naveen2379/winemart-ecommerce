@@ -14,12 +14,10 @@ export default class MixedDrinks extends React.Component {
             drinks: [],
             eachDrinkDetails: []
         };
-        this.showAllDrinks = this.showAllDrinks.bind(this);
-        this.showMixedDrinks = this.showMixedDrinks.bind(this);
-        this.handleDrinkClick = this.handleDrinkClick.bind(this);
+
     }
 
-    showAllDrinks(drinks) {
+    showAllDrinks = (drinks) => {
         console.log(drinks);
         const mixedDrink_type_details = drinks;
         this.setState({
@@ -27,13 +25,13 @@ export default class MixedDrinks extends React.Component {
         });
     }
 
-    showMixedDrinks() {
+    showMixedDrinks = () => {
         this.setState({
             drinks: []
         });
     }
 
-    handleDrinkClick(drinkId) {
+    handleDrinkClick = (drinkId) => {
         console.log('handle drink click');
         const fetchUrl = "https://the-cocktail-db.p.rapidapi.com/lookup.php?i=" + drinkId + "";
         return fetch(fetchUrl, {
@@ -54,6 +52,7 @@ export default class MixedDrinks extends React.Component {
     }
 
     render() {
+        console.log('mixed drinks');
         const drinksNames = this.state.availableDrinksNames;
         const mixed_drinks = drinksNames.map( (drinkTypeName) => {
             return (
