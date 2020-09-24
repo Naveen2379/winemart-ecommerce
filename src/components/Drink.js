@@ -2,7 +2,7 @@ import React from "react";
 import FigureCaption from "react-bootstrap/FigureCaption";
 import {Figure} from "react-bootstrap";
 
-export class Drink extends React.Component {
+export default class Drink extends React.Component {
     constructor(props) {
         super(props);
     }

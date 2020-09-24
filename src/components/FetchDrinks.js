@@ -16,7 +16,8 @@ export const fetchDrinks = (WrappedComponent) => {
 
         componentDidMount() {
             console.log(this.props.drinksType);
-            fetch("https://the-cocktail-db.p.rapidapi.com/filter.php?a="+this.props.drinksType+"", {
+            const {drinksType} = this.props;
+            fetch("https://the-cocktail-db.p.rapidapi.com/filter.php?a="+drinksType+"", {
                 "method": "GET",
                 "headers": {
                     "x-rapidapi-host": "the-cocktail-db.p.rapidapi.com",

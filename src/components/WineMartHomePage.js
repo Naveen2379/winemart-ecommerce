@@ -15,7 +15,7 @@ export default class WineMartHomePage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            key: 'Alcoholic',
+            key: 'alcoholic',
         };
     }
 
@@ -27,6 +27,7 @@ export default class WineMartHomePage extends React.Component {
 
     render() {
         const {key} = this.state;
+        console.log(key);
         const FetchDrinksComp = fetchDrinks(Drinks);
         return <Layout>
             <Header>
@@ -35,14 +36,14 @@ export default class WineMartHomePage extends React.Component {
             </Header>
             <Content className='content-section'>
                 <Tabs size='large' onChange={this.handleChange}>
-                    <TabPane tab="Alcohol" key="Alcoholic">
-                        <div>{key === "Alcoholic" ? <FetchDrinksComp drinksType={key} /> : ''}</div>
+                    <TabPane tab="Alcohol" key="alcoholic">
+                        <div>{key === "alcoholic" ? <FetchDrinksComp drinksType={key} /> : ''}</div>
                     </TabPane>
                     <TabPane tab="Non Alcohol" key="Non Alcoholic">
                         <div>{key === 'Non Alcoholic' ? <FetchDrinksComp drinksType={key} />  : ''}</div>
                     </TabPane>
-                    <TabPane tab="All Kinds of Drinks" key="Mixed Drinks">
-                        {key === 'Mixed Drinks' ? <MixedDrinks keyType={key} /> : ''}
+                    <TabPane tab="All Kinds of Drinks" key="mixed">
+                        {key === 'mixed' ? <MixedDrinks keyType={key} /> : ''}
                     </TabPane>
                 </Tabs>
             </Content>

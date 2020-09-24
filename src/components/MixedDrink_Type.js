@@ -10,58 +10,28 @@ export default class MixedDrink_Type extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            isLoaded: false,
-            drinks: [],
-            drinkClicked: false
+            eachMixedTypeDrinks: [],
         };
-
         const renderLeftArrow = () => <i className="fa fa-caret-left"/>
         const renderRightArrow = () => <i className="fa fa-caret-right"/>
     }
 
-    componentDidMount() {
-        const drinkTypeName = this.props.drinkTypeName;
-        console.log(drinkTypeName);
-        const fetchURL = "https://the-cocktail-db.p.rapidapi.com/filter.php?c="+drinkTypeName+"";
-        console.log(fetchURL);
-        fetch("https://the-cocktail-db.p.rapidapi.com/filter.php?c="+drinkTypeName+"", {
-            "method": "GET",
-            "headers": {
-                "x-rapidapi-host": "the-cocktail-db.p.rapidapi.com",
-                "x-rapidapi-key": "0f95de4865msh72bc273490c401cp149a69jsn898244e5583b"
-            }
-        })
-            .then(response => response.json())
-            .then(result => {
-                this.setState({
-                    isLoaded: true,
-                    drinks: result.drinks
-                });
 
-            })
-            .catch(err => {
-                console.log(err);
-            });
+    viewAllDrinks(mixedDrinksTypeName) {
+        this.props.viewAllDrinks(mixedDrinksTypeName);
     }
 
-    showAllDrinks(drinks) {
-        this.props.showAllDrinks(drinks);
-    }
     handleDrinkClick(drinkId) {
         console.log('drink clicked');
         console.log(drinkId);
-        /*fetchDrinkDetails(drinkId)
-            .then((drinkDetails)=> console.log(drinkDetails));*/
         this.props.handleDrinkClick(drinkId);
     }
 
-    render() {
-        const drinksNames = this.props.drinksNames;
-        const drinks = this.state.drinks;
-        const componentSlider = <ComponentSlider renderLeftArrow={this.renderLeftArrow}
-                                                 renderRightArrow={this.renderRightArrow}>
-            {drinks.map(drink => {
-                return<Figure key={drink.strDrinkThumb} onClick={this.handleDrinkClick.bind(this, drink.idDrink)}>
+    showComponentSlider = (mixedDrinksType) => {
+        return <ComponentSlider renderLeftArrow={this.renderLeftArrow}
+                                renderRightArrow={this.renderRightArrow}>
+            {mixedDrinksType[1].map(drink => {
+                return <Figure key={drink.strDrinkThumb} onClick={ () => this.handleDrinkClick(drink.idDrink)}>
                     <img height="150px" width="150px" src={drink.strDrinkThumb} alt="drinkImage"/>
                     <FigureCaption>
                         <b>{drink.strDrink}</b>
@@ -70,16 +40,32 @@ export default class MixedDrink_Type extends React.Component {
                 </Figure>
             })};
         </ComponentSlider>
+    }
 
-        const showDrinks = <div className="A3100">{isEmpty(this.state.drinks) ? '' :
-            <React.Fragment>
-                <div>{<h4 className="h4Style">{this.props.drinkTypeName}s Available <button className='buttonStyle' onClick={this.showAllDrinks.bind(this, drinks)}>View All</button></h4> }</div>
-                <div>{componentSlider}</div>
-            </React.Fragment>
-        }</div>;
+    showMixedDrinkType = (mixedDrinksType) => {
+        console.log(mixedDrinksType);
+            return (
+                <React.Fragment>
+                    <div>
+                        {
+                            <h4 className="h4Style">{mixedDrinksType[0]}s Available
+                                <button className='buttonStyle' onClick={() => this.viewAllDrinks(mixedDrinksType[0])}>View All</button>
+                            </h4>
+                        }
+                    </div>
+                    <div>{this.showComponentSlider(mixedDrinksType)}</div>
+                </React.Fragment>
+            )
+    }
 
+    render() {
+        const { mixedDrinksType  } = this.props;
         return (
-            <div>{isEmpty(this.state.eachDrinkDetails) ? <div>{showDrinks}</div> : <DrinkPrepHelp drinkInfo={drinks} />}</div>
+            <div>
+                {
+                    <div>{this.showMixedDrinkType(mixedDrinksType)}</div> /*: <DrinkPrepHelp drinkInfo={drinks} />*/
+                }
+            </div>
         );
     }
 

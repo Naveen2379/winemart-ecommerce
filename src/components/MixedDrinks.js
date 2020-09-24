@@ -5,33 +5,26 @@ import {isEmpty} from "lodash";
 import Drinks from "./Drinks";
 import '../styles/MixedDrinks.css';
 import DrinkPrepHelp from "./DrinkPrepHelp";
+import MixedDrink_Types from "./MixedDrink_Types";
 
 export default class MixedDrinks extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            availableDrinksNames: ['Ordinary_Drink', 'Cocktail', 'Shot', 'Coffee / Tea', 'Beer', 'Soft Drink / Soda' ],
+            mixedDrinkTypes: ['Ordinary_Drink', 'Cocktail', 'Shot', 'Coffee / Tea', 'Beer', 'Soft Drink / Soda' ],
             drinks: [],
             eachDrinkDetails: []
         };
-
     }
 
-    showAllDrinks = (drinks) => {
-        console.log(drinks);
-        const mixedDrink_type_details = drinks;
-        this.setState({
-            drinks: mixedDrink_type_details
-        });
-    }
 
-    showMixedDrinks = () => {
+    backToMixedDrinks = () => {
         this.setState({
             drinks: []
         });
     }
 
-    handleDrinkClick = (drinkId) => {
+/*    handleDrinkClick = (drinkId) => {
         console.log('handle drink click');
         const fetchUrl = "https://the-cocktail-db.p.rapidapi.com/lookup.php?i=" + drinkId + "";
         return fetch(fetchUrl, {
@@ -49,33 +42,42 @@ export default class MixedDrinks extends React.Component {
                     eachDrinkDetails: drinkDtls.drinks[0]
                 }, () => this.state.eachDrinkDetails);
             });
-    }
+    }*/
+    /*showMixedDrinks = (mixedDrinkTypes) => {
+        return (
+            mixedDrinkTypes.map( (mixedDrinkType) => {
+                return (
+                <div key={mixedDrinkType} className="A300">
+                    <MixedDrink_Type mixedDrinkTypeName={mixedDrinkType} showAllDrinks={this.showAllDrinks} handleDrinkClick={this.handleDrinkClick} />
+                </div>
+            );
+        })
+        )
+    }*/
 
     render() {
         console.log('mixed drinks');
-        const drinksNames = this.state.availableDrinksNames;
-        const mixed_drinks = drinksNames.map( (drinkTypeName) => {
-            return (
-                <div key={drinkTypeName} className="A300">
-                    <MixedDrink_Type drinkTypeName={drinkTypeName} showAllDrinks={this.showAllDrinks} handleDrinkClick={this.handleDrinkClick} />
-                </div>
-            );
-        });
-
+        const {mixedDrinkTypes, drinks, eachDrinkDetails} = this.state;
+        const hasDrinks = !isEmpty(drinks);
         return (
             <Container className="containerStyle">
-                {isEmpty(this.state.eachDrinkDetails) ?
+                {/*{
+                    isEmpty(eachDrinkDetails) ?
                     <div>
-                        {isEmpty(this.state.drinks) ? <div>{mixed_drinks}</div> :
-                            <div className='part-mixed-drinks'>
-                                <button onClick={this.showMixedDrinks}>{'<<Back'}</button>
-                                <Drinks drinks={this.state.drinks} />
+                        {
+                            hasDrinks ? <div className='part-mixed-drinks'>
+                                    <button onClick={this.backToMixedDrinks}>{'<<Back'}</button>
+                                    <Drinks drinks={drinks} />
                             </div>
+                                : <div>{this.showMixedDrinks(mixedDrinkTypes)}</div>
                         }
                     </div> :
                     <div>
-                        <DrinkPrepHelp drinkInfo={this.state.eachDrinkDetails} />
-                    </div>}
+                        <DrinkPrepHelp drinkInfo={eachDrinkDetails} />
+                    </div>
+                }*/}
+
+                <MixedDrink_Types mixedDrinkTypes={this.state.mixedDrinkTypes} />
             </Container>
         );
     }

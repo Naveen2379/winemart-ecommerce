@@ -5,7 +5,7 @@ import '../styles/Drinks.css';
 import '../App.css';
 import {Figure} from "react-bootstrap";
 import FigureCaption from "react-bootstrap/FigureCaption";
-import {Drink} from "./Drink";
+import Drink from "./Drink";
 
 export default class Drinks extends React.Component {
     constructor(props) {
@@ -26,9 +26,7 @@ export default class Drinks extends React.Component {
                 "x-rapidapi-key": "0f95de4865msh72bc273490c401cp149a69jsn898244e5583b"
             }
         })
-            .then(response => {
-                return response.json();
-            })
+            .then(response => response.json())
             .then((drinkDtls) => {
                 console.log(drinkDtls);
                 this.setState({
@@ -37,18 +35,27 @@ export default class Drinks extends React.Component {
             });
     }
 
+    showMixedDrinksType = (drinks) => {
+         return drinks.map( (drinkDetails) => {
+            return (
+                <React.Fragment key={drinkDetails.idDrink}>
+                    <Drink drinkDetails={drinkDetails} handleDrinkClick={this.handleDrinkClick} />
+                </React.Fragment>
+            )});
+    }
     render() {
         console.log('Drinks');
         const { eachDrinkDetails } = this.state;
-        const { drinks } = this.props;
-        const showAllDrinks = drinks.map( (drinkDetails) => {
-            return (<React.Fragment key={drinkDetails.idDrink}>
-                    <Drink drinkDetails={drinkDetails} handleDrinkClick={this.handleDrinkClick} />
-            </React.Fragment>
-            )});
+        const drinks = this.props.drinks;
+        console.log(drinks)
+        const hasDrinks = !isEmpty(this.props.drinks);
+        const hasEachDrinkDetails = !isEmpty(eachDrinkDetails);
+
         return (
             <div>
-                {isEmpty(eachDrinkDetails) ? <React.Fragment>{showAllDrinks}</React.Fragment> : <DrinkPrepHelp drinkInfo={eachDrinkDetails} />}
+                { hasEachDrinkDetails ? <DrinkPrepHelp drinkInfo={eachDrinkDetails} /> :
+                    hasDrinks ? <React.Fragment>{this.showMixedDrinksType(drinks)}</React.Fragment>
+                    : ''}
             </div>
         )
     }
