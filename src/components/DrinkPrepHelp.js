@@ -5,7 +5,6 @@ import '../styles/DrinkPrepHelp.css';
 export default class DrinkPrepHelp extends React.Component {
     render() {
         const drinkInfo = this.props.drinkInfo;
-        console.log(drinkInfo);
         return (
             <div className='selectedDrinkStyle' >
                 <h3 align='left'>{drinkInfo.strDrink}</h3>

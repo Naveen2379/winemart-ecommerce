@@ -2,7 +2,7 @@ import React from "react";
 import ComponentSlider from "@kapost/react-component-slider";
 import {isEmpty} from "lodash";
 import '../styles/MixedDrinks.css';
-import {Figure} from "react-bootstrap";
+import {Button, Figure} from "react-bootstrap";
 import FigureCaption from "react-bootstrap/FigureCaption";
 import DrinkPrepHelp from "./DrinkPrepHelp";
 
@@ -21,10 +21,8 @@ export default class MixedDrink_Type extends React.Component {
         this.props.viewAllDrinks(mixedDrinksTypeName);
     }
 
-    handleDrinkClick(drinkId) {
-        console.log('drink clicked');
-        console.log(drinkId);
-        this.props.handleDrinkClick(drinkId);
+    handleDrinkClick(drinkID) {
+        this.props.handleDrinkClick(drinkID);
     }
 
     showComponentSlider = (mixedDrinksType) => {
@@ -43,29 +41,26 @@ export default class MixedDrink_Type extends React.Component {
     }
 
     showMixedDrinkType = (mixedDrinksType) => {
-        console.log(mixedDrinksType);
+        const mixedDrinksTypeName = mixedDrinksType[0].replace('_', ' ');
             return (
                 <React.Fragment>
-                    <div>
+                    <React.Fragment style={{'fontStyle': 'Italic'}}>
                         {
-                            <h4 className="h4Style">{mixedDrinksType[0]}s Available
-                                <button className='buttonStyle' onClick={() => this.viewAllDrinks(mixedDrinksType[0])}>View All</button>
+                            <h4 className="h4Style"><b>{mixedDrinksTypeName}s</b> &nbsp; &nbsp;
+                                <Button className='buttonStyle' onClick={() => this.viewAllDrinks(mixedDrinksType[0])}><b>View All</b></Button>
                             </h4>
                         }
-                    </div>
-                    <div>{this.showComponentSlider(mixedDrinksType)}</div>
+                    </React.Fragment>
+                    {this.showComponentSlider(mixedDrinksType)}
+                    <hr />
                 </React.Fragment>
             )
     }
 
     render() {
-        const { mixedDrinksType  } = this.props;
+        const { mixedDrinksType } = this.props;
         return (
-            <div>
-                {
-                    <div>{this.showMixedDrinkType(mixedDrinksType)}</div> /*: <DrinkPrepHelp drinkInfo={drinks} />*/
-                }
-            </div>
+            <React.Fragment>{this.showMixedDrinkType(mixedDrinksType)}</React.Fragment>
         );
     }
 

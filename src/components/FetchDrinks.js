@@ -15,7 +15,6 @@ export const fetchDrinks = (WrappedComponent) => {
         }
 
         componentDidMount() {
-            console.log(this.props.drinksType);
             const {drinksType} = this.props;
             fetch("https://the-cocktail-db.p.rapidapi.com/filter.php?a="+drinksType+"", {
                 "method": "GET",
@@ -25,7 +24,6 @@ export const fetchDrinks = (WrappedComponent) => {
                 }
             }).then(response => response.json())
                 .then(result => {
-                    console.log(result);
                     this.setState({
                         drinks: result.drinks,
                         showSelectedDrink: false
@@ -37,7 +35,6 @@ export const fetchDrinks = (WrappedComponent) => {
         }
 
         render() {
-            console.log('fetchDrinks_HOC');
             const {drinks} = this.state;
             return (
                     <WrappedComponent drinks={drinks} />

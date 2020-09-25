@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import MixedDrink_Type from "./MixedDrink_Type";
 import Drinks from "./Drinks";
 import {isEmpty} from "lodash";
+import DrinkPrepHelp from "./DrinkPrepHelp";
 
 class MixedDrinkTypes extends Component {
     constructor(props) {
@@ -9,30 +10,32 @@ class MixedDrinkTypes extends Component {
         this.state = {
             mixedDrinksTypes: [],
             mixedDrinksTypeName: '',
-            drinksFromViewAll: []
+            drinksForViewAll: [],
+            eachDrinkDetails: []
         }
     }
 
     componentDidMount() {
-        const {mixedDrinkTypes} = this.props;
-        const fetchMixedTypeDrinksURLs = mixedDrinkTypes.map( (mixedDrinkTypeName) =>
+        this.fetchDataFromMixedDrinksTypes();
+    }
+
+    fetchDataFromMixedDrinksTypes = () => {
+        const { mixedDrinkTypesNames } = this.props;
+        const fetchMixedTypeDrinksURLs = mixedDrinkTypesNames.map( (mixedDrinkTypeName) =>
             fetch("https://the-cocktail-db.p.rapidapi.com/filter.php?c="+mixedDrinkTypeName+"", {
-            "method": "GET",
-            "headers": {
-                "x-rapidapi-host": "the-cocktail-db.p.rapidapi.com",
-                "x-rapidapi-key": "0f95de4865msh72bc273490c401cp149a69jsn898244e5583b"
-            }
-        }));
+                "method": "GET",
+                "headers": {
+                    "x-rapidapi-host": "the-cocktail-db.p.rapidapi.com",
+                    "x-rapidapi-key": "0f95de4865msh72bc273490c401cp149a69jsn898244e5583b"
+                }
+            }));
 
         Promise.all(fetchMixedTypeDrinksURLs)
             .then(responses => {
-                console.log(responses);
                 return Promise.all(responses.map((response) => response.json()))
             })
             .then(results => {
-                console.log(results);
-                console.log(mixedDrinkTypes);
-                const drinksWithMixedTypeName = mixedDrinkTypes.map( (drinkTypeName, ind) => {
+                const drinksWithMixedTypeName = mixedDrinkTypesNames.map( (drinkTypeName, ind) => {
                     const newArr = [];
                     newArr.push(drinkTypeName, results[ind].drinks);
                     return newArr;
@@ -44,7 +47,6 @@ class MixedDrinkTypes extends Component {
     }
 
     handleDrinkClick = (drinkId) => {
-        console.log('handle drink click');
         const fetchUrl = "https://the-cocktail-db.p.rapidapi.com/lookup.php?i=" + drinkId + "";
         return fetch(fetchUrl, {
             "method": "GET",
@@ -58,59 +60,58 @@ class MixedDrinkTypes extends Component {
             })
             .then((drinkDtls) => {
                 this.setState({
-                    eachDrinkDetails: drinkDtls.drinks[0]
-                }, () => this.state.eachDrinkDetails);
+                    eachDrinkDetails: drinkDtls.drinks[0],
+                    drinksForViewAll: []
+                });
             });
     }
 
-   /* showMixedDrinks = (mixedDrinkTypes) => {
-        return (
-            mixedDrinkTypes.map( (mixedDrinkType) => {
-                return (
-                    <div key={mixedDrinkType} className="A300">
-                        <MixedDrink_Type mixedDrinkTypeName={mixedDrinkType} showAllDrinks={this.showAllDrinks} handleDrinkClick={this.handleDrinkClick} />
-                    </div>
-                );
-            })
-        )
-    }*/
-
     viewAllDrinks = (mixedDrinksTypeName) => {
-        //console.log(this.state.mixedDrinksTypes);
-        console.log(mixedDrinksTypeName);
         const { mixedDrinksTypes } = this.state;
-        const extractedmixedDrinksType = mixedDrinksTypes.map( (mixedDrinksType) => { if(mixedDrinksType[0]===mixedDrinksTypeName) {return mixedDrinksType[1]} } )
+        const extractedMixedDrinksType = mixedDrinksTypes.map( (mixedDrinksType) => { if(mixedDrinksType[0]===mixedDrinksTypeName) {return mixedDrinksType[1]} } )
             .filter(each =>each!==undefined).flat();
-        console.log(extractedmixedDrinksType);
-        //const extractedmixedDrinksType = draftmixedDrinksType.filter(each => each!==undefined).flat();
         this.setState({
             mixedDrinksTypeName: mixedDrinksTypeName,
-            drinksFromViewAll: extractedmixedDrinksType
+            drinksForViewAll: extractedMixedDrinksType,
         });
     }
 
 
     showMixedDrinks = (mixedDrinksTypes) => {
-        //console.log(mixedDrinksTypes);
         return (
             mixedDrinksTypes.map( (mixedDrinksType) => {
-                console.log(mixedDrinksType);
                     return (
-                        <div key={mixedDrinksType} className="A300">
+                        <React.Fragment key={mixedDrinksType} className="A300">
                             <MixedDrink_Type mixedDrinksType={mixedDrinksType} viewAllDrinks={this.viewAllDrinks} handleDrinkClick={this.handleDrinkClick} />
-                        </div>
+                        </React.Fragment>
                     );
                 })
             )
     }
 
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if(!isEmpty(prevState.eachDrinkDetails) || !isEmpty(prevState.drinksForViewAll)) {
+            this.setState({
+                eachDrinkDetails: [],
+                drinksForViewAll: []
+            });
+        }
+    }
+
     render() {
-        const { mixedDrinksTypes, drinksFromViewAll, mixedDrinksTypeName } = this.state;
-        const hasDrinks = !isEmpty(drinksFromViewAll);
+        const { mixedDrinksTypes, drinksForViewAll, mixedDrinksTypeName, eachDrinkDetails } = this.state;
+        const hasDrinksForViewAll = !isEmpty(drinksForViewAll);
+        const hasEachDrinkDetails = !isEmpty(eachDrinkDetails);
         return (
-            <div>
-                { hasDrinks ? <Drinks drinks={drinksFromViewAll} /> : this.showMixedDrinks(mixedDrinksTypes)}
-            </div>
+            <React.Fragment>
+                {
+                    hasDrinksForViewAll ? <div className='part-mixed-drinks'>
+                        <h2>{mixedDrinksTypeName.replace('_', ' ')}s</h2>
+                        <Drinks drinks={drinksForViewAll} />
+                    </div>
+                    : hasEachDrinkDetails ? <DrinkPrepHelp drinkInfo={eachDrinkDetails} /> : this.showMixedDrinks(mixedDrinksTypes)
+                }
+            </React.Fragment>
         );
     }
 }

@@ -1,5 +1,4 @@
 .selectedDrinkStyle {
-    padding-left: 30px;
-    width: 1000px;
-    margin-bottom: 20px;
+    padding: 30px;
+    width: max-content;
 }

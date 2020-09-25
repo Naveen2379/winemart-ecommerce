@@ -3,8 +3,6 @@ import {isEmpty} from "lodash";
 import DrinkPrepHelp from "./DrinkPrepHelp";
 import '../styles/Drinks.css';
 import '../App.css';
-import {Figure} from "react-bootstrap";
-import FigureCaption from "react-bootstrap/FigureCaption";
 import Drink from "./Drink";
 
 export default class Drinks extends React.Component {
@@ -16,8 +14,6 @@ export default class Drinks extends React.Component {
     }
 
     handleDrinkClick = (drinkId) => {
-        console.log(this.state.eachDrinkDetails);
-        console.log('drink clicked');
         const fetchUrl = "https://the-cocktail-db.p.rapidapi.com/lookup.php?i=" + drinkId + "";
         return fetch(fetchUrl, {
             "method": "GET",
@@ -28,35 +24,47 @@ export default class Drinks extends React.Component {
         })
             .then(response => response.json())
             .then((drinkDtls) => {
-                console.log(drinkDtls);
                 this.setState({
-                    eachDrinkDetails: drinkDtls.drinks[0]
-                }, () => this.state.eachDrinkDetails);
+                    eachDrinkDetails: drinkDtls.drinks[0],
+                });
             });
     }
 
-    showMixedDrinksType = (drinks) => {
+    showAllDrinks = (drinks) => {
          return drinks.map( (drinkDetails) => {
             return (
-                <React.Fragment key={drinkDetails.idDrink}>
-                    <Drink drinkDetails={drinkDetails} handleDrinkClick={this.handleDrinkClick} />
-                </React.Fragment>
+                <Drink key={drinkDetails.idDrink} drinkDetails={drinkDetails} handleDrinkClick={this.handleDrinkClick} />
             )});
     }
+
+    backToViewAllState = () => {
+        this.setState({
+            eachDrinkDetails: []
+        });
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if(!isEmpty(prevState.eachDrinkDetails)) {
+            this.setState({
+                eachDrinkDetails: []
+            })
+        }
+    }
+
     render() {
-        console.log('Drinks');
         const { eachDrinkDetails } = this.state;
         const drinks = this.props.drinks;
-        console.log(drinks)
         const hasDrinks = !isEmpty(this.props.drinks);
         const hasEachDrinkDetails = !isEmpty(eachDrinkDetails);
 
         return (
-            <div>
-                { hasEachDrinkDetails ? <DrinkPrepHelp drinkInfo={eachDrinkDetails} /> :
-                    hasDrinks ? <React.Fragment>{this.showMixedDrinksType(drinks)}</React.Fragment>
-                    : ''}
-            </div>
+            <React.Fragment>
+                { hasEachDrinkDetails ? <React.Fragment>
+                        <DrinkPrepHelp drinkInfo={eachDrinkDetails} />
+                </React.Fragment> :
+                    <React.Fragment>{hasDrinks ? <React.Fragment>{this.showAllDrinks(drinks)}</React.Fragment> : ''}</React.Fragment>
+                }
+            </React.Fragment>
         )
     }
 

@@ -14,7 +14,7 @@ export default class Drink extends React.Component {
     render() {
         const drinkDetails = this.props.drinkDetails;
         return (
-            <Figure key={drinkDetails.strDrink} onClick={this.handleDrinkClick.bind(this, drinkDetails.idDrink)} >
+            <Figure key={drinkDetails.strDrink} onClick={() => this.handleDrinkClick(drinkDetails.idDrink)} >
                 <img height="150px" width="150px" src={drinkDetails.strDrinkThumb} alt="drinkImage"/>
                 <FigureCaption>
                     <b>{drinkDetails.strDrink}</b>
