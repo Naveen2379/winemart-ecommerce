@@ -98,6 +98,10 @@ h2 {
 .btn-primary:hover {
     background-color: #33000d;
 }
+
+.btn-primary:active {
+    background-color: #33000d !important;
+}
 .figure:hover {
     background: whitesmoke;
     height: auto;

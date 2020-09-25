@@ -1,11 +1,7 @@
 import React from "react";
-import MixedDrink_Type from "./MixedDrink_Type";
 import {Container} from "react-bootstrap";
-import {isEmpty} from "lodash";
-import Drinks from "./Drinks";
 import '../styles/MixedDrinks.css';
-import DrinkPrepHelp from "./DrinkPrepHelp";
-import MixedDrink_Types from "./MixedDrink_Types";
+import MixedDrinkTypes from "./MixedDrinkTypes";
 
 export default class MixedDrinks extends React.Component {
     constructor(props) {
@@ -16,10 +12,9 @@ export default class MixedDrinks extends React.Component {
     }
 
     render() {
-        console.log('MixedDrinks');
         return (
             <Container className="containerStyle">
-                <MixedDrink_Types mixedDrinkTypesNames={this.state.mixedDrinkTypesNames} />
+                <MixedDrinkTypes mixedDrinkTypesNames={this.state.mixedDrinkTypesNames} />
             </Container>
         );
     }

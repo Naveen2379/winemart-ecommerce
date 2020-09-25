@@ -21,15 +21,13 @@
   <component name="ChangeListManager">
     <list default="true" id="4385e495-3ec3-41ff-8765-5c9992b76ca4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Drink.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Drink.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DrinkPrepHelp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DrinkPrepHelp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Drinks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Drinks.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/FetchDrinks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FetchDrinks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MixedDrink_Type.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MixedDrink_Type.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MixedDrink_Types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MixedDrink_Types.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MixedDrink_Type.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MixedDrinkType.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MixedDrink_Types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MixedDrinkTypes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/MixedDrinks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MixedDrinks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/DrinkPrepHelp.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/DrinkPrepHelp.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/WineMartHomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WineMartHomePage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/MixedDrinks.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/MixedDrinks.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -150,7 +148,7 @@
       <workItem from="1599454617458" duration="1656000" />
       <workItem from="1600843044545" duration="19342000" />
       <workItem from="1600922003939" duration="24622000" />
-      <workItem from="1601011362666" duration="27003000" />
+      <workItem from="1601011362666" duration="27954000" />
     </task>
     <servers />
   </component>
@@ -202,10 +200,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="764" y="467" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/67.27.1853.1053@67.27.1853.1053" timestamp="1594199276706" />
-    <state x="1050" y="297" width="618" height="580" key="find.popup" timestamp="1601066290158">
+    <state x="1050" y="297" width="618" height="580" key="find.popup" timestamp="1601066598001">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="1050" y="297" width="618" height="580" key="find.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1601066290158" />
+    <state x="1050" y="297" width="618" height="580" key="find.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1601066598001" />
     <state x="657" y="198" width="672" height="676" key="search.everywhere.popup" timestamp="1600851722387">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>

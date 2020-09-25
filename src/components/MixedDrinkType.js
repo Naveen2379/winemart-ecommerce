@@ -1,12 +1,10 @@
 import React from "react";
 import ComponentSlider from "@kapost/react-component-slider";
-import {isEmpty} from "lodash";
 import '../styles/MixedDrinks.css';
 import {Button, Figure} from "react-bootstrap";
 import FigureCaption from "react-bootstrap/FigureCaption";
-import DrinkPrepHelp from "./DrinkPrepHelp";
 
-export default class MixedDrink_Type extends React.Component {
+export default class MixedDrinkType extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -44,13 +42,13 @@ export default class MixedDrink_Type extends React.Component {
         const mixedDrinksTypeName = mixedDrinksType[0].replace('_', ' ');
             return (
                 <React.Fragment>
-                    <React.Fragment style={{'fontStyle': 'Italic'}}>
+                    <div style={{'fontStyle': 'Italic'}}>
                         {
                             <h4 className="h4Style"><b>{mixedDrinksTypeName}s</b> &nbsp; &nbsp;
                                 <Button className='buttonStyle' onClick={() => this.viewAllDrinks(mixedDrinksType[0])}><b>View All</b></Button>
                             </h4>
                         }
-                    </React.Fragment>
+                    </div>
                     {this.showComponentSlider(mixedDrinksType)}
                     <hr />
                 </React.Fragment>

@@ -1,9 +1,7 @@
-import React, {Component, isValidElement, useState} from "react";
+import React, {Component} from "react";
 
 import '../styles/AlcoholOrNonAlcohol.css';
 import '../styles/AlcNonAlcMixed.css'
-import {isEmpty} from "lodash";
-import Drinks from "./Drinks";
 
 export const fetchDrinks = (WrappedComponent) => {
     return class extends Component {

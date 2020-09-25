@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import MixedDrink_Type from "./MixedDrink_Type";
+import MixedDrinkType from "./MixedDrinkType";
 import Drinks from "./Drinks";
 import {isEmpty} from "lodash";
 import DrinkPrepHelp from "./DrinkPrepHelp";
@@ -81,9 +81,9 @@ class MixedDrinkTypes extends Component {
         return (
             mixedDrinksTypes.map( (mixedDrinksType) => {
                     return (
-                        <React.Fragment key={mixedDrinksType} className="A300">
-                            <MixedDrink_Type mixedDrinksType={mixedDrinksType} viewAllDrinks={this.viewAllDrinks} handleDrinkClick={this.handleDrinkClick} />
-                        </React.Fragment>
+                        <div key={mixedDrinksType} className="A300">
+                            <MixedDrinkType mixedDrinksType={mixedDrinksType} viewAllDrinks={this.viewAllDrinks} handleDrinkClick={this.handleDrinkClick} />
+                        </div>
                     );
                 })
             )

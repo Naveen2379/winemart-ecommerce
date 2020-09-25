@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import { Layout, Tabs} from "antd";
 import 'antd/dist/antd.css';
 
@@ -27,11 +27,9 @@ export default class WineMartHomePage extends React.Component {
 
     render() {
         const {key} = this.state;
-        console.log(key);
         const FetchDrinksComp = fetchDrinks(Drinks);
         return <Layout>
             <Header>
-                {/*<img src='../images/cocktaildB_logo.png' alt='CocktaildB Image' />*/}
                 <b>TheCocktaildB</b>
             </Header>
             <Content className='content-section'>

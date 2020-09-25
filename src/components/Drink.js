@@ -3,10 +3,6 @@ import FigureCaption from "react-bootstrap/FigureCaption";
 import {Figure} from "react-bootstrap";
 
 export default class Drink extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     handleDrinkClick(drinkId) {
         this.props.handleDrinkClick(drinkId);
     }
