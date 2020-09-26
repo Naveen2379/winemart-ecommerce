@@ -8,16 +8,16 @@ export default class DrinkPrepHelp extends React.Component {
         return (
             <div className='selectedDrinkStyle' >
                 <h3 align='left'>{drinkInfo.strDrink}</h3>
-                <Row>
-                    <Col sm='2'>
-                        <img height="150px" width="150px" src={drinkInfo.strDrinkThumb} alt="drinkImage"/>
-                    </Col>
+                <Row className='drink-prep-help'>
                     <Col sm='3'>
+                        <img height="150px" width="150px" src={drinkInfo.strDrinkThumb} alt="drinkImage"/>
+                    </Col >
+                    <Col sm='4'>
                         <h4>Ingredients</h4>
                         <h5>{drinkInfo.strIngredient1}</h5>
                         <h5>{drinkInfo.strIngredient2}</h5>
                     </Col>
-                    <Col sm='3'>
+                    <Col sm='5'>
                         <h4>Instructions</h4>
                         <h5>{drinkInfo.strInstructions}</h5>
                     </Col>
