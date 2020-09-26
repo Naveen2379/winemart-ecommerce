@@ -25,5 +25,4 @@ export default class DrinkPrepHelp extends React.Component {
             </div>
         );
     }
-
 }
